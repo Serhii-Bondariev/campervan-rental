@@ -1,9 +1,10 @@
 import React from 'react';
+import CampersList from '../../components/campersList/CampersList';
 
 const Catalog = () => {
   return (
     <div>
-      <h2>Catalog</h2>
+      <CampersList />
     </div>
   );
 };

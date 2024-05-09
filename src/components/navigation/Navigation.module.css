@@ -1,0 +1,43 @@
+.navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.navBlock {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+}
+.logoTitle {
+  font-family: 'Lexend Mega', sans-serif;
+  font-size: 26px;
+  font-weight: 200;
+
+  line-height: 1.2;
+  text-align: center;
+}
+
+.logoText {
+  font-family: 'Lexend Mega', sans-serif;
+  font-size: 12px;
+  font-weight: 200;
+}
+
+.logoDivision {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.division {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.navbarMobileMenu {
+  margin-right: 8px;
+}
