@@ -1,0 +1,9 @@
+.logo {
+  margin-left: 6px;
+  width: 32px;
+  height: 32px;
+}
+
+.logo:hover {
+  fill: #03a9f4; /* Колір при наведенні курсора */
+}

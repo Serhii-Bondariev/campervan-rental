@@ -6,6 +6,7 @@
 }
 
 .navBlock {
+  padding: 8px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -15,16 +16,17 @@
 .logoTitle {
   font-family: 'Lexend Mega', sans-serif;
   font-size: 26px;
-  font-weight: 200;
-
+  font-weight: 300;
   line-height: 1.2;
   text-align: center;
+  text-shadow: -1px 3px 3px rgba(65, 134, 183, 0.5);
 }
 
 .logoText {
   font-family: 'Lexend Mega', sans-serif;
   font-size: 12px;
-  font-weight: 200;
+  font-weight: 300;
+  text-shadow: -1px 3px 3px rgba(65, 67, 3, 0.5);
 }
 
 .logoDivision {
@@ -41,3 +43,8 @@
 .navbarMobileMenu {
   margin-right: 8px;
 }
+/* .iconlogo1 {
+  border: 2px dashed #2a2a2a;
+  border-radius: 8px;
+  fill: #2a2a2a;
+} */
