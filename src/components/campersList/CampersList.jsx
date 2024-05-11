@@ -53,9 +53,12 @@ const CampersList = () => {
               alt={`Image ${index}`}
               onClick={() => openModal(camper)}
             />
-            <p className={css.cardPrice}>Price: ${camper.price}</p>
-            <p className={css.cardLocation}>Location: {camper.location}</p>
-            <p className={css.cardRating}>Rating: {camper.rating}</p>
+            <div>
+              <p className={css.cardPrice}>Price: ${camper.price}</p>
+              <p className={css.cardLocation}>Location: {camper.location}</p>
+              <p className={css.cardRating}>Rating: {camper.rating}</p>
+            </div>
+            <div></div>
           </li>
         ))}
       </ul>

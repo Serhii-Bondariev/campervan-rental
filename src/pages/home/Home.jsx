@@ -1,5 +1,6 @@
 import React from 'react';
 import css from './Home.module.css';
+import BookingForm from 'components/booking/BookingForm';
 // import Card from '../../components/cards/Card';
 
 const Home = ({ campers }) => {
@@ -10,6 +11,9 @@ const Home = ({ campers }) => {
         src="beckgroundMobile.png"
         alt="Highway to the mountains"
       />
+      <div>
+        <BookingForm />
+      </div>
       {/* <div>
         <h2>Campers</h2>
         {campers.map(camper => (

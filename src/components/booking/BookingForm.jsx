@@ -27,44 +27,53 @@ const BookingForm = ({ onClose }) => {
   };
 
   return (
-    <Formik
-      initialValues={initialValues}
-      validationSchema={validationSchema}
-      onSubmit={handleSubmit}
-    >
-      {({ isSubmitting }) => (
-        <Form>
-          <div className={css.formGroup}>
-            <label htmlFor="name">Name:</label>
-            <Field type="text" id="name" name="name" />
-            <ErrorMessage name="name" component="div" className={css.error} />
-          </div>
-          <div className={css.formGroup}>
-            <label htmlFor="email">Email:</label>
-            <Field type="email" id="email" name="email" />
-            <ErrorMessage name="email" component="div" className={css.error} />
-          </div>
-          <div className={css.formGroup}>
-            <label htmlFor="bookingDate">Booking Date:</label>
-            <Field type="date" id="bookingDate" name="bookingDate" />
-            <ErrorMessage
-              name="bookingDate"
-              component="div"
-              className={css.error}
-            />
-          </div>
-          <div className={css.formGroup}>
-            <label htmlFor="comment">Comment:</label>
-            <Field as="textarea" id="comment" name="comment" />
-          </div>
-          <div className={css.formGroup}>
-            <button type="submit" disabled={isSubmitting}>
-              {isSubmitting ? 'Submitting...' : 'Submit'}
-            </button>
-          </div>
-        </Form>
-      )}
-    </Formik>
+    <div className={css.container}>
+      <div>
+        <h3>Booking Form</h3>
+      </div>
+      <Formik
+        initialValues={initialValues}
+        validationSchema={validationSchema}
+        onSubmit={handleSubmit}
+      >
+        {({ isSubmitting }) => (
+          <Form className={css.form}>
+            <div className={css.formGroup}>
+              <label htmlFor="name">Name:</label>
+              <Field type="text" id="name" name="name" />
+              <ErrorMessage name="name" component="div" className={css.error} />
+            </div>
+            <div className={css.formGroup}>
+              <label htmlFor="email">Email:</label>
+              <Field type="email" id="email" name="email" />
+              <ErrorMessage
+                name="email"
+                component="div"
+                className={css.error}
+              />
+            </div>
+            <div className={css.formGroup}>
+              <label htmlFor="bookingDate">Booking Date:</label>
+              <Field type="date" id="bookingDate" name="bookingDate" />
+              <ErrorMessage
+                name="bookingDate"
+                component="div"
+                className={css.error}
+              />
+            </div>
+            <div className={css.formGroup}>
+              <label htmlFor="comment">Comment:</label>
+              <Field as="textarea" id="comment" name="comment" />
+            </div>
+            <div className={css.formGroup}>
+              <button type="submit" disabled={isSubmitting}>
+                {isSubmitting ? 'Submitting...' : 'Submit'}
+              </button>
+            </div>
+          </Form>
+        )}
+      </Formik>
+    </div>
   );
 };
 
