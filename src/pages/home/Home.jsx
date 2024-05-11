@@ -1,6 +1,6 @@
 import React from 'react';
 import css from './Home.module.css';
-import Card from '../../components/cards/Card';
+// import Card from '../../components/cards/Card';
 
 const Home = ({ campers }) => {
   return (

@@ -6,12 +6,12 @@ import Home from '../pages/home/Home.jsx';
 import Catalog from '../pages/catalog/Catalog.jsx';
 import Favorites from '../pages/favorites/Favorites.jsx';
 import Navigation from './navigation/Navigation.jsx';
-import css from './App.css';
+// import css from './App.css';
 // import NotFound from "./pages/NotFound";
 
 function App() {
   return (
-    <div className={css.App}>
+    <div>
       <Navigation />
       <Routes>
         <Route path="/" element={<Home />} />
