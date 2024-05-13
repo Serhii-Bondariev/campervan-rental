@@ -1,0 +1,25 @@
+.camperCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  width: 320px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #f9f9f9;
+}
+.horizontalScroll {
+  display: flex;
+  overflow-x: auto;
+}
+
+.camperItem {
+  margin-right: 20px; /* Додайте потрібний відступ між фотографіями */
+}
+
+.camperItem img {
+  max-width: 100%; /* Забезпечте адаптивність ширини зображення */
+  height: auto;
+}

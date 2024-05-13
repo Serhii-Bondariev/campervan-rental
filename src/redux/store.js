@@ -13,7 +13,7 @@ import {
 import { camperReducer } from "./campers/slice";
 
 const persistConfig = {
-	key: "nomad",
+	key: camperReducer.name,
 	storage,
 	whitelist: ["favorites"],
 };

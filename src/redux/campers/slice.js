@@ -1,16 +1,20 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getCampers } from "./Operations";
+import { CAMP_LIMIT , getCampers } from "./Operations";
 
 const initialState = {
 	campersData: [],
+	totalPages: null,
 	favorites: [],
 	isLoading: false,
 	error: null,
 };
 
+ const calcTotalPages = (totalPages) =>
+  Math.ceil(totalPages / CAMP_LIMIT);
+
 const camperSlice = createSlice({
 	name: "campers",
-	initialState,
+	initialState: initState,
 	reducers: {
 		addFavorite: {
 			reducer(state, action) {

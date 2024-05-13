@@ -3,6 +3,7 @@ import axios from 'axios';
 import css from './CampersList.module.css';
 import Modal from '../modals/modal/Modal'; // Assuming you have a Modal component
 import BookingForm from 'components/booking/BookingForm';
+import { MdBookmarkAdd } from 'react-icons/md';
 
 const CampersList = () => {
   const [campers, setCampers] = useState([]);
@@ -53,10 +54,13 @@ const CampersList = () => {
               alt={`Image ${index}`}
               onClick={() => openModal(camper)}
             />
+            <MdBookmarkAdd className={css.bookmark} />
+
             <div>
               <p className={css.cardPrice}>Price: ${camper.price}</p>
               <p className={css.cardLocation}>Location: {camper.location}</p>
               <p className={css.cardRating}>Rating: {camper.rating}</p>
+              <p>details airConditioner: {camper.details.airConditioner}</p>
             </div>
             <div></div>
           </li>

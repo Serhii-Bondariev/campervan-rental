@@ -29,7 +29,7 @@ const BookingForm = ({ onClose }) => {
   return (
     <div className={css.container}>
       <div>
-        <h3>Booking Form</h3>
+        <h3>Booking now!</h3>
       </div>
       <Formik
         initialValues={initialValues}
@@ -52,11 +52,67 @@ const BookingForm = ({ onClose }) => {
                 className={css.error}
               />
             </div>
+            <div>
+              <label htmlFor="phone">Phone:</label>
+              <Field type="tel" id="phone" name="phone" />
+              <ErrorMessage
+                name="phone"
+                placeholder="Phone number"
+                component="div"
+                className={css.error}
+              />
+            </div>
+            <div>
+              <label htmlFor="Choose camper type">Choose camper type:</label>
+              <select id="camperType" name="camperType"></select>
+              <ErrorMessage
+                name="camperType"
+                component="div"
+                className={css.error}
+              />
+            </div>
+            <div>
+              <label htmlFor="Choose camper equipment">
+                Choose camper equipment:
+              </label>
+              <select id="camperEquipment" name="camperEquipment">
+                <option value={camper.form}>Air conditioner</option>
+                <option value="Wheelchair">Wheelchair</option>
+                <option value="Wheelchair and Air conditioner">
+                  Wheelchair and Air conditioner
+                </option>
+              </select>
+              <ErrorMessage
+                name="camperEquipment"
+                component="div"
+                className={css.error}
+              />
+            </div>
+
             <div className={css.formGroup}>
               <label htmlFor="bookingDate">Booking Date:</label>
               <Field type="date" id="bookingDate" name="bookingDate" />
               <ErrorMessage
                 name="bookingDate"
+                component="div"
+                className={css.error}
+              />
+            </div>
+            <div>
+              <label htmlFor="bookingTime">Pickup Time:</label>
+              <select id="bookingTime" name="bookingTime"></select>
+              <option value="10:00">10:00 AM</option>
+              <ErrorMessage
+                name="bookingTime"
+                component="div"
+                className={css.error}
+              />
+            </div>
+            <div>
+              <label htmlFor="pickupLocation">Pickup Location:</label>
+              <select id="pickupLocation" name="pickupLocation"></select>
+              <ErrorMessage
+                name="pickupLocation"
                 component="div"
                 className={css.error}
               />
