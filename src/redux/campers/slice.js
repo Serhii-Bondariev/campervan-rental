@@ -22,13 +22,12 @@ const camperSlice = createSlice({
         state.favorites.push(action.payload);
       },
     },
-    deleteFavorite: {
-      reducer(state, action) {
-        state.favorites = state.favorites.filter(
-          (item) => item !== action.payload
-        );
-      },
-    },
+		deleteFavorite: {
+			reducer(state, action) {
+				const idToDelete = action.payload._id;
+				state.favorites = state.favorites.filter(item => item._id !== idToDelete);
+			},
+		},
   },
   extraReducers: (builder) => {
     builder
