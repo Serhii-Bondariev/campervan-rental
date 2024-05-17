@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { MdBookmarkAdd } from 'react-icons/md';
 import css from './RandomCampers.module.css';
 
 const RandomCampers = () => {
@@ -29,13 +30,13 @@ const RandomCampers = () => {
   };
 
   return (
-    <div>
-      <h2>Random Campers</h2>
+    <div className={css.content}>
+      <h2>Popular Campers</h2>
       <ul>
         {campers.map((camper, index) => (
           <li className={css.camperCard} key={index}>
             <h3>{camper.name}</h3>
-
+            <MdBookmarkAdd className={css.bookmark} />
             <div className={css.horizontalScroll}>
               {camper.gallery.map((image, index) => (
                 <img

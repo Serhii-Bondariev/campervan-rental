@@ -50,21 +50,21 @@ const Navigation = () => {
             <NavLink
               to="/"
               onClick={closeMobileMenu}
-              activeclassname={css.active}
+              activeClassName={css.active}
             >
               Home
             </NavLink>
             <NavLink
               to="/catalog"
               onClick={closeMobileMenu}
-              activeclassname={css.active}
+              activeClassName={css.active}
             >
               Catalog
             </NavLink>
             <NavLink
               to="/favorites"
               onClick={closeMobileMenu}
-              activeclassname={css.active}
+              activeClassName={css.active}
             >
               Favorites
             </NavLink>

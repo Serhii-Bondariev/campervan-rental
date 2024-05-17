@@ -1,6 +1,6 @@
 import React from 'react';
 import css from './Home.module.css';
-import BookingForm from 'components/booking/BookingForm';
+import BookingForm from '../../components/booking/BookingForm';
 import RandomCampers from 'components/randomCampers/RandomCampers';
 // import Card from '../../components/cards/Card';
 
@@ -20,20 +20,6 @@ const Home = ({ campers }) => {
       <div>
         <RandomCampers campers={campers} />
       </div>
-      {/* <div>
-        <h2>Campers</h2>
-        {campers.map(camper => (
-          <Card
-            key={camper._id}
-            name={camper.name}
-            gallery={camper.gallery}
-            price={camper.price}
-            location={camper.location}
-            rating={camper.rating}
-            description={camper.description}
-          />
-        ))}
-      </div> */}
     </div>
   );
 };

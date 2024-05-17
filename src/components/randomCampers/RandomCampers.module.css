@@ -1,15 +1,19 @@
-.camperCard {
+.content {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+}
+
+.camperCard {
   margin-bottom: 20px;
   margin-top: 20px;
-  width: 320px;
+  width: 100%;
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 10px;
-  background-color: #f9f9f9;
 }
+
 .horizontalScroll {
   display: flex;
   overflow-x: auto;

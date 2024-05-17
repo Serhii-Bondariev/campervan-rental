@@ -5,6 +5,8 @@ export const instance = axios.create({
 	baseURL: "https://6632bb43f7d50bbd9b473f15.mockapi.io/",
 });
 
+export const CAMP_LIMIT_PAGE = 12;
+
 export const getCampers = createAsyncThunk(
 	"campers/getAll",
 	async ({ page = 1 }, thunkAPI) => {

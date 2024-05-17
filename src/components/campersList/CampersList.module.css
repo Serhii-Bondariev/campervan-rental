@@ -99,6 +99,11 @@
   background-color: #0069d9;
 }
 
+.horizontalScroll {
+  display: flex;
+  overflow-x: auto;
+}
+
 .bookmark {
   width: 24px;
   height: 24px;

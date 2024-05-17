@@ -45,16 +45,28 @@ const CampersList = () => {
   return (
     <div className={css.campersCard}>
       <h2 className={css.title}>Campers</h2>
+
       <ul className={css.campersList}>
         {campers.map((camper, index) => (
           <li className={css.card} key={index}>
             <h3 className={css.cardTitle}>{camper.name}</h3>
-            <img
+            <MdBookmarkAdd className={css.bookmark} />
+            <div className={css.horizontalScroll}>
+              {camper.gallery.map((image, index) => (
+                <img
+                  onClick={() => openModal(camper)}
+                  key={index}
+                  src={image}
+                  alt={`Image ${index}`}
+                  className={css.camperItem}
+                />
+              ))}
+            </div>
+            {/* <img
               src={camper.gallery[0]} // Display only the first image
               alt={`Image ${index}`}
               onClick={() => openModal(camper)}
-            />
-            <MdBookmarkAdd className={css.bookmark} />
+            /> */}
 
             <div>
               <p className={css.cardPrice}>Price: ${camper.price}</p>
