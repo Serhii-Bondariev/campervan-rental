@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import css from './CampersList.module.css';
-import Modal from '../modals/modal/Modal'; // Assuming you have a Modal component
+import Modal from '../modals/modal/Modal';
 import BookingForm from 'components/booking/BookingForm';
 import { MdBookmarkAdd } from 'react-icons/md';
+import Loader from 'components/loader/Loader';
 
 const CampersList = () => {
   const [campers, setCampers] = useState([]);
@@ -39,7 +40,11 @@ const CampersList = () => {
   };
 
   if (loading) {
-    return <div>Loading...</div>;
+    return (
+      <div className={css.loader}>
+        <Loader />
+      </div>
+    );
   }
 
   return (

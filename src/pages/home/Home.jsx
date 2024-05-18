@@ -2,6 +2,7 @@ import React from 'react';
 import css from './Home.module.css';
 import BookingForm from '../../components/booking/BookingForm';
 import RandomCampers from 'components/randomCampers/RandomCampers';
+import Gallery from 'components/gallery/Gallery';
 // import Card from '../../components/cards/Card';
 
 const Home = ({ campers }) => {
@@ -13,7 +14,9 @@ const Home = ({ campers }) => {
         src="beckgroundMobile.png"
         alt="Highway to the mountains"
       />
-
+      <div>
+        <Gallery />
+      </div>
       <div>
         <BookingForm />
       </div>

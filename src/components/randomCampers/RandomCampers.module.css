@@ -20,23 +20,26 @@
 }
 
 .camperItem {
-  margin-right: 20px; /* Додайте потрібний відступ між фотографіями */
+  margin-right: 20px;
 }
 
 .camperItem img {
-  max-width: 100%; /* Забезпечте адаптивність ширини зображення */
+  max-width: 100%;
   height: auto;
 }
 
 .bookmark {
-  width: 24px;
-  height: 24px;
+  width: 32px;
+  height: 32px;
   top: 10px;
   right: 10px;
-  fill: rgb(255, 153, 0);
+  fill: rgb(247, 180, 80);
   cursor: pointer;
 }
 
 .bookmark:hover {
+  fill: rgb(165, 87, 39);
+}
+.favorite {
   fill: rgb(255, 0, 0);
 }

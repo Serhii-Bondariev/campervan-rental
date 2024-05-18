@@ -1,9 +1,8 @@
-// RandomCampers.jsx
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { MdBookmarkAdd } from 'react-icons/md';
 import { useDispatch } from 'react-redux';
-import { addFavorite } from '../../redux/campers/slice';
+import { addFavorite, deleteFavorite } from '../../redux/campers/slice';
 import css from './RandomCampers.module.css';
 
 const RandomCampers = () => {
@@ -16,8 +15,12 @@ const RandomCampers = () => {
         const response = await axios.get(
           'https://6632bb43f7d50bbd9b473f15.mockapi.io/advert'
         );
-        const randomCampers = getRandomItems(response.data, 4);
-        setCampers(randomCampers);
+        const randomCampers = getRandomItems(response.data, 4); // Передача перемішаного масиву до функції getRandomItems
+        const campersWithFavorites = randomCampers.map(camper => ({
+          ...camper,
+          isFavorite: false,
+        }));
+        setCampers(campersWithFavorites);
       } catch (error) {
         console.error('Error fetching campers:', error);
       }
@@ -28,11 +31,24 @@ const RandomCampers = () => {
 
   const getRandomItems = (array, count) => {
     const shuffled = array.sort(() => 0.5 - Math.random());
+    console.log(shuffled); // Виведення перемішаного масиву у консоль
     return shuffled.slice(0, count);
   };
 
-  const addToFavorites = camper => {
-    dispatch(addFavorite(camper));
+  const toggleFavorite = camper => {
+    setCampers(prevCampers =>
+      prevCampers.map(prevCamper =>
+        prevCamper._id === camper._id
+          ? { ...prevCamper, isFavorite: !prevCamper.isFavorite }
+          : prevCamper
+      )
+    );
+
+    if (camper.isFavorite) {
+      dispatch(deleteFavorite(camper));
+    } else {
+      dispatch(addFavorite(camper));
+    }
   };
 
   return (
@@ -43,8 +59,10 @@ const RandomCampers = () => {
           <li className={css.camperCard} key={index}>
             <h3>{camper.name}</h3>
             <MdBookmarkAdd
-              className={css.bookmark}
-              onClick={() => addToFavorites(camper)}
+              className={`${css.bookmark} ${
+                camper.isFavorite ? css.favorite : ''
+              }`}
+              onClick={() => toggleFavorite(camper)}
             />
             <div className={css.horizontalScroll}>
               {camper.gallery.map((image, index) => (
