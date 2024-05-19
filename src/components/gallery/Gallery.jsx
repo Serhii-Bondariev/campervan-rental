@@ -1,54 +1,97 @@
-// import { Carousel } from '@material-tailwind/react';
-// import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import ModalInfo from '../modals/modalInfo/ModalInfo'; // Імпорт компонента ModalInfo
 
-// const Gallery = ({ images }) => {
-//   // Лог для перевірки отриманих зображень
-//   const [activeIndex, setActiveIndex] = useState(0);
+const Gallery = () => {
+  const [campers, setCampers] = useState([]);
+  const [selectedCamper, setSelectedCamper] = useState(null); // Стан для вибраного кемпера
+  const [modalOpen, setModalOpen] = useState(false); // Стан для відображення/приховування модального вікна
 
-//   if (!images || images.length === 0) {
-//     return <div>No images available</div>;
-//   }
+  useEffect(() => {
+    const fetchCampers = async () => {
+      try {
+        const response = await axios.get(
+          'https://6632bb43f7d50bbd9b473f15.mockapi.io/advert'
+        );
+        setCampers(response.data);
+      } catch (error) {
+        console.error('Error fetching campers:', error);
+      }
+    };
 
-//   return (
-//     <Carousel
-//       className="rounded-xl"
-//       activeIndex={activeIndex}
-//       onChange={newIndex => setActiveIndex(newIndex)}
-//     >
-//       {images.map((image, index) => (
-//         <img
-//           key={index}
-//           src={image}
-//           alt={`Image ${index}`}
-//           className="h-full w-full object-cover"
-//         />
-//       ))}
-//     </Carousel>
-//   );
-// };
+    fetchCampers();
+  }, []);
 
-// export default Gallery;
+  const openModal = camper => {
+    setSelectedCamper(camper);
+    setModalOpen(true);
+  };
 
-import { Carousel } from 'flowbite-react';
-import React from 'react';
-
-const Gallery = ({ images }) => {
-  console.log('Gallery images:', images); // Лог для перевірки отриманих зображень
-  if (!images || images.length === 0) {
-    return <div>No images available</div>;
-  }
+  const closeModal = () => {
+    setModalOpen(false);
+  };
 
   return (
-    <>
-      <div className="h-56 sm:h-64 xl:h-80 2xl:h-96">
-        <Carousel>
-          {images.map((image, index) => (
-            <img key={index} src={image} alt={`Image ${index}`} />
-          ))}
-        </Carousel>
-      </div>
-    </>
+    <div>
+      <Carousel>
+        {campers.map((camper, index) => (
+          <div key={index} onClick={() => openModal(camper)}>
+            {' '}
+            {/* Додано обробник кліку для відкриття модального вікна */}
+            <img src={camper.gallery[0]} alt={`Camper ${index}`} />
+            <p className="legend">{camper.name}</p>
+          </div>
+        ))}
+      </Carousel>
+
+      {/* Відображення модального вікна з детальною інформацією про кемпер */}
+      {modalOpen && selectedCamper && (
+        <ModalInfo camper={selectedCamper} onClose={closeModal} />
+      )}
+    </div>
   );
 };
 
 export default Gallery;
+
+// import React, { useState, useEffect } from 'react';
+// import axios from 'axios';
+// import { Carousel } from 'react-responsive-carousel';
+// import 'react-responsive-carousel/lib/styles/carousel.min.css';
+
+// const Gallery = () => {
+//   const [campers, setCampers] = useState([]);
+
+//   useEffect(() => {
+//     const fetchCampers = async () => {
+//       try {
+//         const response = await axios.get(
+//           'https://6632bb43f7d50bbd9b473f15.mockapi.io/advert'
+//         );
+//         setCampers(response.data);
+//       } catch (error) {
+//         console.error('Error fetching campers:', error);
+//       }
+//     };
+
+//     fetchCampers();
+//   }, []);
+
+//   return (
+//     <div>
+//       <h2>Gallery</h2>
+//       <Carousel>
+//         {campers.map((camper, index) => (
+//           <div key={index}>
+//             <img src={camper.gallery[0]} alt={`Camper ${index}`} />
+//             <p className="legend">{camper.name}</p>
+//           </div>
+//         ))}
+//       </Carousel>
+//     </div>
+//   );
+// };
+
+// export default Gallery;
