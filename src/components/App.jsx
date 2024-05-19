@@ -1,3 +1,4 @@
+// App.jsx
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import Home from '../pages/home/Home.jsx';
