@@ -3,7 +3,8 @@ import { NavLink } from 'react-router-dom';
 import css from './Navigation.module.css';
 import { FaBars } from 'react-icons/fa';
 import MobileMenuModal from '../modals/mobileMenuModal/MobileMenuModal';
-import Logo from 'components/logo/Logo';
+// import Logo from 'components/logo/Logo';
+import LogoImg from 'components/logoImg/LogoImg';
 
 const Navigation = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -36,7 +37,7 @@ const Navigation = () => {
       <nav className={css.navBlock}>
         <div className={css.navbarLogo}>
           <NavLink to="/">
-            <Logo />
+            <LogoImg />
           </NavLink>
         </div>
         <div className={css.division}>

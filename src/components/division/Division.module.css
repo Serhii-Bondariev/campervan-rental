@@ -1,0 +1,29 @@
+.division {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.logoDivision {
+  text-align: center;
+}
+
+.logoTitle {
+  font-family: 'Lexend Mega', sans-serif;
+  font-size: 26px;
+  font-weight: 300;
+  line-height: 1.2;
+  text-align: center;
+  text-shadow: -1px 3px 3px rgba(65, 134, 183, 0.5);
+}
+
+.logoText {
+  font-family: 'Lexend Mega', sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  text-shadow: -1px 3px 3px rgba(65, 67, 3, 0.5);
+}
+.logo {
+  width: 40px;
+  height: 40px;
+}

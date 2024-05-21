@@ -4,19 +4,18 @@ import BookingForm from '../../components/booking/BookingForm';
 import RandomCampers from 'components/randomCampers/RandomCampers';
 import Gallery from 'components/gallery/Gallery';
 
-// import Card from '../../components/cards/Card';
-
 const Home = ({ campers }) => {
   return (
     <div className={css.homeWrapper}>
       <button className={css.bookBtn}>Book Now</button>
-      <img
+      {/* <img
         className={css.bgrdImg}
         src="beckgroundMobile.png"
         alt="Highway to the mountains"
-      />
+      /> */}
       <div>
-        <Gallery />
+        {/* Передаємо дані про кемперів у компонент Gallery */}
+        <Gallery campers={campers} />
       </div>
 
       <div>
