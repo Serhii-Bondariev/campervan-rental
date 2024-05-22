@@ -4,6 +4,7 @@ import { MdBookmarkAdd } from 'react-icons/md';
 import { useDispatch } from 'react-redux';
 import { addFavorite, deleteFavorite } from '../../redux/campers/slice';
 import css from './RandomCampers.module.css';
+import { Button } from '@mui/material';
 
 const RandomCampers = () => {
   const [campers, setCampers] = useState([]);
@@ -66,20 +67,23 @@ const RandomCampers = () => {
 
   return (
     <div className={css.content}>
-      <h2>Popular Campers</h2>
-      <ul>
+      <h2 className={css.title}>Popular Campers</h2>
+      <ul className={css.camperList}>
         {campers.map((camper, index) => (
           <li className={css.camperCard} key={index}>
-            <h3>{camper.name}</h3>
-            <MdBookmarkAdd
-              className={`${css.bookmark} ${
-                camper.isFavorite ? css.favorite : ''
-              }`}
-              onClick={() => toggleFavorite(camper)}
-              style={{
-                fill: camper.isFavorite ? 'red' : 'rgb(247, 180, 80)',
-              }}
-            />
+            <div className={css.camperInfo}>
+              <h3 className={css.camperTitle}>{camper.name}</h3>
+              <MdBookmarkAdd
+                className={`${css.bookmark} ${
+                  camper.isFavorite ? css.favorite : ''
+                }`}
+                onClick={() => toggleFavorite(camper)}
+                style={{
+                  fill: camper.isFavorite ? 'red' : 'orange',
+                }}
+              />
+            </div>
+
             <div className={css.horizontalScroll}>
               {camper.gallery.map((image, index) => (
                 <img
@@ -90,9 +94,30 @@ const RandomCampers = () => {
                 />
               ))}
             </div>
-            <p>Price: ${camper.price}</p>
-            <p>Location: {camper.location}</p>
-            <p>Rating: {camper.rating}</p>
+            <div className={css.camperFooter}>
+              <div className={css.camperDetails}>
+                <p className={css.camperText}>
+                  Price: <span className={css.price}>$ {camper.price}</span>
+                </p>
+
+                <p className={css.camperText}>
+                  Rating: <span className={css.rating}>{camper.rating}</span>
+                </p>
+                <p className={css.camperText}>
+                  Location:{' '}
+                  <span className={css.location}>{camper.location}</span>
+                </p>
+              </div>
+              <div>
+                <Button
+                  variant="contained"
+                  className={css.camperBtn}
+                  onClick={() => openModal(camper)}
+                >
+                  Book Now!
+                </Button>
+              </div>
+            </div>
           </li>
         ))}
       </ul>

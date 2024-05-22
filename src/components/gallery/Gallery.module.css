@@ -111,7 +111,7 @@
 .carousel-p {
   font-family: 'Open Sans Condensed', sans-serif;
   font-size: 1.4rem;
-  margin-bottom: 0;
+  margin-bottom: 10;
 }
 
 /* Card image */
@@ -146,20 +146,20 @@
 
 @keyframes next {
   from {
-    transform: translateX(0px);
+    transform: translateX(10px);
   }
 
   to {
-    transform: translateX(calc(0px + var(--cardWidth)));
+    transform: translateX(calc(10px + var(--cardWidth)));
   }
 }
 
 @keyframes prev {
   from {
-    transform: translateX(0px);
+    transform: translateX(10px);
   }
 
   to {
-    transform: translateX(calc(0px - var(--cardWidth)));
+    transform: translateX(calc(10px - var(--cardWidth)));
   }
 }

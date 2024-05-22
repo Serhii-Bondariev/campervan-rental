@@ -1,6 +1,6 @@
 import React from 'react';
 import CamperVanLogo from '../images/logos/CamperVanLogo.png';
-import css from './LogoImg.module.css'; // Виправлено імпорт
+import css from './LogoImg.module.css';
 
 const LogoImg = () => {
   return (

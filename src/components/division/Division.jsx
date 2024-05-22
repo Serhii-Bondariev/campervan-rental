@@ -6,7 +6,7 @@ const Division = () => {
     <div className={css.division}>
       <div className={css.logoDivision}>
         <h1 className={css.logoTitle}>NOMAD</h1>
-        <h3 className={css.logoText}>Campers rental</h3>
+        <h3 className={css.logoText}>motorhome rentals</h3>
       </div>
     </div>
   );

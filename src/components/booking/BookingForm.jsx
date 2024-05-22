@@ -37,7 +37,7 @@ const BookingForm = ({ onClose }) => {
 
   return (
     <div className={css.container}>
-      <div>
+      <div classNamre={css.wrapper}>
         <h3>Booking now!</h3>
       </div>
       <Formik
@@ -113,9 +113,6 @@ const BookingForm = ({ onClose }) => {
               <label htmlFor="bookingTime">Pickup Time:</label>
               <Field as="select" id="bookingTime" name="bookingTime">
                 <option value="">Select time</option>
-                <option value="10:00">10:00 AM</option>
-                <option value="12:00">12:00 PM</option>
-                <option value="14:00">02:00 PM</option>
               </Field>
               <ErrorMessage
                 name="bookingTime"
@@ -127,9 +124,6 @@ const BookingForm = ({ onClose }) => {
               <label htmlFor="pickupLocation">Pickup Location:</label>
               <Field as="select" id="pickupLocation" name="pickupLocation">
                 <option value="">Select location</option>
-                <option value="Location A">Location A</option>
-                <option value="Location B">Location B</option>
-                <option value="Location C">Location C</option>
               </Field>
               <ErrorMessage
                 name="pickupLocation"

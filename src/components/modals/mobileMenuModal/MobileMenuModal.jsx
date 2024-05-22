@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { FaTimes } from 'react-icons/fa';
+import { MdClose } from 'react-icons/md';
 import css from './MobileMenuModal.module.css';
 
 const MobileMenuModal = ({ isOpen, onClose }) => {
@@ -22,7 +23,7 @@ const MobileMenuModal = ({ isOpen, onClose }) => {
         <div className={css.overlay} onClick={onClose}>
           <div className={css.modal} onClick={e => e.stopPropagation()}>
             <button className={css.closeButton} onClick={onClose}>
-              <FaTimes />
+              <MdClose />
             </button>
             <NavLink
               to="/"

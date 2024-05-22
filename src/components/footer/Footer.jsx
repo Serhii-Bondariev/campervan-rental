@@ -1,14 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { NavLink } from 'react-router-dom';
 import css from './Footer.module.css';
-// import Logo from 'components/logo/Logo';
 import Division from 'components/division/Division';
+import LogoImg from 'components/logoImg/LogoImg';
 
 const Footer = props => {
   return (
     <div className={css.footer}>
-      {/* <Logo /> */}
-      <Division />
+      <div className={css.logoDivision}>
+        <div>
+          <NavLink to="/">
+            <LogoImg />
+          </NavLink>
+        </div>
+        <div className={css.footerDivision}>
+          <Division />
+        </div>
+      </div>
       <div className={css.info}>
         <p className={css.copyright}>© 2023. All rights reserved.</p>
         <p className={css.poweredBy}>Powered by React</p>

@@ -19,7 +19,7 @@ const Home = ({ campers }) => {
       </div>
 
       <div>
-        <BookingForm />
+        <BookingForm campers={campers} />
       </div>
       <div>
         <RandomCampers campers={campers} />

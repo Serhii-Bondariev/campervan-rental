@@ -5,6 +5,7 @@ import { FaBars } from 'react-icons/fa';
 import MobileMenuModal from '../modals/mobileMenuModal/MobileMenuModal';
 // import Logo from 'components/logo/Logo';
 import LogoImg from 'components/logoImg/LogoImg';
+import Division from 'components/division/Division';
 
 const Navigation = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -40,12 +41,7 @@ const Navigation = () => {
             <LogoImg />
           </NavLink>
         </div>
-        <div className={css.division}>
-          <div className={css.logoDivision}>
-            <h1 className={css.logoTitle}>NOMAD</h1>
-            <h3 className={css.logoText}>Campers rental</h3>
-          </div>
-        </div>
+        <Division />
         {windowWidth >= 768 ? (
           <div className={css.navbarLinksDesktop}>
             <NavLink
