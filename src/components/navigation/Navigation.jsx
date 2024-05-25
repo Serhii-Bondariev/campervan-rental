@@ -68,7 +68,10 @@ const Navigation = () => {
           </div>
         ) : (
           <div className={css.navbarMobileMenu} onClick={toggleMobileMenu}>
-            <FaBars />
+            <div className={css.menuBlock}>
+              <FaBars className={css.menuIcon} />
+              <p className={css.menuText}>menu</p>
+            </div>
           </div>
         )}
         <MobileMenuModal isOpen={isMobileMenuOpen} onClose={closeMobileMenu} />
