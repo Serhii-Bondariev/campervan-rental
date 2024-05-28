@@ -32,7 +32,7 @@
   text-align: center;
 }
 
-.logoTitle {
+/* .logoTitle {
   font-family: 'Lexend Mega', sans-serif;
   font-size: 26px;
   font-weight: 300;
@@ -43,10 +43,10 @@
 
 .logoText {
   font-family: 'Lexend Mega', sans-serif;
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 300;
   text-shadow: -1px 3px 3px rgba(65, 67, 3, 0.5);
-}
+} */
 
 .navbarLinksDesktop {
   display: flex;

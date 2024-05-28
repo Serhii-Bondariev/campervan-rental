@@ -1,0 +1,115 @@
+.module {
+  width: 100%;
+  padding: 12px;
+  background-color: #ffc107;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  font-family: 'Lexend Mega', sans-serif;
+}
+
+.wrapper {
+  width: 100%;
+  /* height: 100vh; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  min-width: 320px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: start;
+}
+
+.card {
+  width: 120px;
+  border-radius: 8px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 8px;
+  margin: 0 15px 25px 0;
+  padding: 12px;
+  display: flex;
+  align-items: flex-end;
+  transition: 0.6s cubic-bezier(0.28, -0.03, 0, 0.99);
+  box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.8);
+}
+
+.card > .row > .icon {
+  background: #223;
+  color: white;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card > .row > .description {
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+  overflow: hidden;
+  height: 80px;
+  width: 520px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition-delay: 0.3s;
+  transition: all 0.3s ease;
+}
+
+.description .p {
+  color: #4d4d4f;
+  padding: 10px;
+}
+
+.description .h4 {
+  text-transform: uppercase;
+  font-weight: 800;
+  color: rgb(57, 55, 55);
+  padding: 10px;
+}
+
+.input {
+  display: none;
+}
+
+.input:checked + .card {
+  width: 600px;
+}
+
+.input:checked + .card > .row > .description {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.card[for='c1'] {
+  background-image: url(https://images.unsplash.com/photo-1453728013993-6d66e9c9123a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dmlld3xlbnwwfHwwfHw%3D&w=1000&q=80);
+}
+
+.card[for='c2'] {
+  background-image: url(../images/bgrd/roadMap.png);
+}
+
+.card[for='c3'] {
+  background-image: url(https://images.unsplash.com/photo-1579546929518-9e396f3cc809?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80);
+}
+
+.card[for='c4'] {
+  background-image: url(https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80);
+}

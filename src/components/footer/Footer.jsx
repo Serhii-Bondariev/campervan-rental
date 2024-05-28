@@ -19,11 +19,11 @@ const Footer = props => {
         </div>
       </div>
       <div className={css.info}>
-        <p className={css.copyright}>© 2023. All rights reserved.</p>
-        <p className={css.poweredBy}>Powered by React</p>
+        <p className={css.copyright}>© 2024. All rights reserved.</p>
+        <p className={css.poweredBy}>Powered by MERN.</p>
         <p className={css.version}>Version 1.0.0</p>
         <p className={css.author}>
-          Designed and developed by{' '}
+          This is a pet project. Designed and developed by{' '}
           <a href="https://github.com/Serhii-Bondariev">Serhii Bondariev</a>
         </p>
       </div>

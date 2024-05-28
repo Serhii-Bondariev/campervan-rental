@@ -10,7 +10,7 @@
 
 .logoTitle {
   font-family: 'Lexend Mega', sans-serif;
-  font-size: 26px;
+  font-size: 2rem;
   font-weight: 300;
   line-height: 1.2;
   text-align: center;
@@ -19,7 +19,7 @@
 
 .logoText {
   font-family: 'Lexend Mega', sans-serif;
-  font-size: 12px;
+  font-size: 0.73rem;
   font-weight: 300;
   text-shadow: -1px 3px 3px rgba(65, 67, 3, 0.5);
 }
