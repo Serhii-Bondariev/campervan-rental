@@ -3,7 +3,8 @@ import css from './Home.module.css';
 import BookingForm from '../../components/booking/BookingForm';
 import RandomCampers from 'components/randomCampers/RandomCampers';
 import Gallery from 'components/gallery/Gallery';
-import CardAnimation from 'components/cardAnimation/CardAnimation';
+import Video from 'components/video/Video';
+// import CardAnimation from 'components/cardAnimation/CardAnimation';
 // import BookButton from 'components/buttons/BookButton/BookButton';
 
 const Home = ({ campers }) => {
@@ -17,6 +18,7 @@ const Home = ({ campers }) => {
       /> */}
       <div>
         {/* Передаємо дані про кемперів у компонент Gallery */}
+        <Video />
         <Gallery campers={campers} />
       </div>
       {/* <BookButton /> */}
@@ -26,7 +28,7 @@ const Home = ({ campers }) => {
       <div>
         <RandomCampers campers={campers} />
       </div>
-      <CardAnimation />
+      {/* <CardAnimation /> */}
     </div>
   );
 };

@@ -1,12 +1,8 @@
 /* Navigation.module.css */
 .navigation {
-  background-image: linear-gradient(
-    90deg,
-    #ffffff 0%,
-    #ecd68b 30%,
-    #edebe5 100%
-  );
-  /* background-color: #f1f1f1; */
+  background: rgba(255, 255, 255, 0.17);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.23);
   padding: 10px 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }

@@ -68,7 +68,7 @@ const CampersList = () => {
 
   return (
     <div className={css.campersCard}>
-      <h2 className={css.title}>Campers</h2>
+      <h2 className={css.title}>Our RV`s</h2>
 
       <ul className={css.campersList}>
         {loading ? (
@@ -78,16 +78,28 @@ const CampersList = () => {
         ) : (
           campers.map((camper, index) => (
             <li className={css.card} key={index}>
-              <h3 className={css.cardTitle}>{camper.name}</h3>
-              <MdBookmarkAdd
-                className={`${css.bookmark} ${
-                  camper.isFavorite ? css.favorite : ''
-                }`}
-                onClick={() => toggleFavorite(camper)}
-                style={{
-                  fill: camper.isFavorite ? 'red' : 'rgb(247, 180, 80)',
-                }}
-              />
+              <div className={css.cardHeader}>
+                <h3 className={css.cardTitle}>{camper.name}</h3>
+                {/* <MdBookmarkAdd
+                  className={`${css.bookmark} ${
+                    camper.isFavorite ? css.favorite : ''
+                  }`}
+                  onClick={() => toggleFavorite(camper)}
+                  style={{
+                    fill: camper.isFavorite ? 'red' : 'rgb(247, 180, 80)',
+                  }}
+                /> */}
+                <MdBookmarkAdd
+                  className={`${css.bookmark} ${
+                    camper.isFavorite ? css.favorite : ''
+                  }`}
+                  onClick={() => toggleFavorite(camper)}
+                  style={{
+                    fill: camper.isFavorite ? 'red' : 'orange',
+                  }}
+                />
+              </div>
+
               <div className={css.horizontalScroll}>
                 {camper.gallery.map((image, index) => (
                   <img
@@ -141,120 +153,3 @@ const CampersList = () => {
 };
 
 export default CampersList;
-
-// import React, { useState, useEffect } from 'react';
-// import axios from 'axios';
-// import css from './CampersList.module.css';
-// import Modal from '../modals/modal/Modal';
-// import BookingForm from 'components/booking/BookingForm';
-// import { MdBookmarkAdd } from 'react-icons/md';
-// import Loader from 'components/loader/Loader';
-
-// const CampersList = () => {
-//   const [campers, setCampers] = useState([]);
-//   const [loading, setLoading] = useState(true);
-//   const [selectedCamper, setSelectedCamper] = useState(null);
-//   const [modalOpen, setModalOpen] = useState(false);
-
-//   useEffect(() => {
-//     const fetchCampers = async () => {
-//       try {
-//         const response = await axios.get(
-//           'https://6632bb43f7d50bbd9b473f15.mockapi.io/advert'
-//         );
-//         setCampers(response.data);
-//         setLoading(false);
-//       } catch (error) {
-//         console.error('Error fetching campers:', error);
-//         setLoading(false);
-//       }
-//     };
-
-//     fetchCampers();
-//   }, []);
-
-//   const openModal = camper => {
-//     setSelectedCamper(camper);
-//     setModalOpen(true);
-//   };
-
-//   const closeModal = () => {
-//     setSelectedCamper(null);
-//     setModalOpen(false);
-//   };
-
-//   if (loading) {
-//     return (
-//       <div className={css.loader}>
-//         <Loader />
-//       </div>
-//     );
-//   }
-
-//   return (
-//     <div className={css.campersCard}>
-//       <h2 className={css.title}>Campers</h2>
-
-//       <ul className={css.campersList}>
-//         {campers.map((camper, index) => (
-//           <li className={css.card} key={index}>
-//             <h3 className={css.cardTitle}>{camper.name}</h3>
-//             <MdBookmarkAdd className={css.bookmark} />
-//             <div className={css.horizontalScroll}>
-//               {camper.gallery.map((image, index) => (
-//                 <img
-//                   onClick={() => openModal(camper)}
-//                   key={index}
-//                   src={image}
-//                   alt={`Image ${index}`}
-//                   className={css.camperItem}
-//                 />
-//               ))}
-//             </div>
-//             {/* <img
-//               src={camper.gallery[0]} // Display only the first image
-//               alt={`Image ${index}`}
-//               onClick={() => openModal(camper)}
-//             /> */}
-
-//             <div>
-//               <p className={css.cardPrice}>Price: ${camper.price}</p>
-//               <p className={css.cardLocation}>Location: {camper.location}</p>
-//               <p className={css.cardRating}>Rating: {camper.rating}</p>
-//               <p>details airConditioner: {camper.details.airConditioner}</p>
-//             </div>
-//             <div></div>
-//           </li>
-//         ))}
-//       </ul>
-//       {modalOpen && (
-//         <Modal onClose={closeModal}>
-//           <h2>{selectedCamper.name}</h2>
-//           <div className={css.cardGallery}>
-//             {selectedCamper.gallery.map((image, index) => (
-//               <img key={index} src={image} alt={`Image ${index}`} />
-//             ))}
-//           </div>
-//           <p className={css.cardPrice}>Price: ${selectedCamper.price}</p>
-//           <p className={css.cardLocation}>
-//             Location: {selectedCamper.location}
-//           </p>{' '}
-//           <p className={css.cardRating}>Rating: {selectedCamper.rating}</p>
-//           <div className={css.cardDetails}>
-//             <p className={css.cardDescription}>
-//               <span className={css.descriptionlabel}>Description:</span>{' '}
-//               {selectedCamper.description}
-//             </p>
-//           </div>
-//           <div>
-//             <BookingForm />
-//           </div>
-//           {/* Display additional details, reviews, and booking form */}
-//           <button onClick={closeModal}>Close</button>
-//         </Modal>
-//       )}
-//     </div>
-//   );
-// };
-
-// export default CampersList;
