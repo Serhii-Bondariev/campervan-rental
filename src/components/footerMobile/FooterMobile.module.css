@@ -1,0 +1,55 @@
+.mobileNavigation {
+  position: fixed;
+  background: #0d6efd;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.16);
+  width: 100%;
+  height: 64px;
+  bottom: 0;
+  left: 0;
+  z-index: 111;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+}
+
+.navigationList {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  height: 100%;
+}
+.navigationItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 100%;
+}
+
+.camperVan {
+  height: 18px;
+}
+
+.navigationLink {
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: yellow;
+  font-weight: 700;
+  font-size: 8px;
+  line-height: 12px;
+  height: 44px;
+  width: 100%;
+  text-align: center;
+  margin: 0;
+}
+
+.navigationLink svg {
+  max-width: 24px;
+  display: block;
+  margin: 0 auto;
+  height: 28px;
+}
+
+.navigationLink :hover {
+  fill: #0d6efd;
+}

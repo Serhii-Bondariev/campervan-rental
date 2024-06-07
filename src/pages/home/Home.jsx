@@ -19,7 +19,6 @@ const Home = ({ campers }) => {
       <div>
         {/* Передаємо дані про кемперів у компонент Gallery */}
         <Video />
-        <Gallery campers={campers} />
       </div>
       {/* <BookButton /> */}
       <div>
@@ -28,6 +27,7 @@ const Home = ({ campers }) => {
       <div>
         <RandomCampers campers={campers} />
       </div>
+      <Gallery campers={campers} />
       {/* <CardAnimation /> */}
     </div>
   );
