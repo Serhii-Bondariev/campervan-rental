@@ -8,24 +8,26 @@ import LogoImg from 'components/logoImg/LogoImg';
 const Footer = props => {
   return (
     <div className={css.footer}>
-      <div className={css.logoDivision}>
-        <div>
-          <NavLink to="/">
-            <LogoImg />
-          </NavLink>
+      <div className={css.wrapper}>
+        <div className={css.logoDivision}>
+          <div>
+            <NavLink to="/">
+              <LogoImg />
+            </NavLink>
+          </div>
+          <div className={css.footerDivision}>
+            <Division />
+          </div>
         </div>
-        <div className={css.footerDivision}>
-          <Division />
+        <div className={css.info}>
+          <p className={css.copyright}>© 2024. All rights reserved.</p>
+          <p className={css.poweredBy}>Powered by MERN.</p>
+          <p className={css.version}>Version 1.0.0</p>
+          <p className={css.author}>
+            This is a pet project. Designed and developed by{' '}
+            <a href="https://github.com/Serhii-Bondariev">Serhii Bondariev</a>
+          </p>
         </div>
-      </div>
-      <div className={css.info}>
-        <p className={css.copyright}>© 2024. All rights reserved.</p>
-        <p className={css.poweredBy}>Powered by MERN.</p>
-        <p className={css.version}>Version 1.0.0</p>
-        <p className={css.author}>
-          This is a pet project. Designed and developed by{' '}
-          <a href="https://github.com/Serhii-Bondariev">Serhii Bondariev</a>
-        </p>
       </div>
     </div>
   );
