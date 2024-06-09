@@ -1,0 +1,119 @@
+/* Rewievs.module.css */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.reviewCard {
+  width: 95%;
+  margin-bottom: 20px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.38);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.29);
+  /* border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 8px;
+  width: 300px;
+  text-align: center;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+}
+
+.avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 16px;
+}
+.avatarBlok {
+  display: flex;
+  justify-content:space-between;
+}
+
+.reviewerName {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-weight: bold;
+  font-size: 1.2em;
+  margin: 8px 0;
+}
+
+.reviewerInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.reviewerName::first-line {
+  font-weight: bold;
+  font-size: 1.1em;
+  color: #555;
+}
+
+.reviewerRating {
+  font-size: 0.7em;
+  margin: 4px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  margin: 8px auto;
+}
+
+.comment {
+  font-size: 0.9em;
+  color: #555;
+}
+
+.noReviews {
+  font-size: 1.2em;
+  color: #888;
+}
+
+
+
+
+/* .wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  padding: 12px;
+}
+
+.reviewCard {
+  width: 95%;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.38);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: 12px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.29);
+  margin-bottom: 22px;
+}
+
+.reviewerName {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  height: 40px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #2b2727;
+  padding: 8px;
+} */

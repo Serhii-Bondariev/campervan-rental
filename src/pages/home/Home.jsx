@@ -4,6 +4,7 @@ import BookingForm from '../../components/booking/BookingForm';
 import RandomCampers from 'components/randomCampers/RandomCampers';
 import Gallery from 'components/gallery/Gallery';
 import Video from 'components/video/Video';
+import Rewievs from 'components/rewiev/Rewievs';
 // import CardAnimation from 'components/cardAnimation/CardAnimation';
 // import BookButton from 'components/buttons/BookButton/BookButton';
 
@@ -29,6 +30,7 @@ const Home = ({ campers }) => {
       </div>
       <Gallery campers={campers} />
       {/* <CardAnimation /> */}
+      <Rewievs />
     </div>
   );
 };
