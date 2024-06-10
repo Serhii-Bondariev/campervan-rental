@@ -61,3 +61,21 @@
   justify-content: center;
   text-align: center;
 }
+
+@media screen and (min-width: 769px) {
+  .footer {
+    padding: 0;
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+  .logoDivision {
+    display: none;
+  }
+
+  .wrapper{
+    margin-bottom: 8px;
+  }
+
+}

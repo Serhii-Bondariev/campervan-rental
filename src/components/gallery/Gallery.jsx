@@ -53,7 +53,7 @@ const Gallery = () => {
       >
         {campers.map((camper, index) => (
           <SwiperSlide key={index} onClick={() => openModal(camper)}>
-            <img src={camper.gallery[0]} alt={`Camper ${index}`} />
+            <img className={css.img} src={camper.gallery[0]} alt={`Camper ${index}`} />
             <p className={css.legend}>{camper.name}</p>
           </SwiperSlide>
         ))}
