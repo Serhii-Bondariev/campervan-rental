@@ -1,6 +1,30 @@
 import React, { useEffect, useState } from 'react';
-import Rating from 'react-rating-stars-component';
 import css from './Rewievs.module.css';
+import TotalRating from '../totalRating/TotalRating'; // Виправлений шлях імпорту
+import Logo from 'components/logo/Logo';
+
+// Функція для визначення кольорів рейтингу
+const getColor = rating => {
+  if (rating <= 1) return '#FF0000'; // червоний
+  if (rating <= 2) return '#FFA500'; // помаранчевий
+  if (rating <= 3) return '#FFFF00'; // жовтий
+  if (rating <= 4) return '#90EE90'; // світло-зелений
+  return '#008000'; // зелений
+};
+
+// Компонент для відображення зірок з кольорами
+const RatingStars = ({ count, value }) => {
+  const stars = [];
+  for (let i = 1; i <= count; i++) {
+    const color = i <= value ? getColor(value) : 'gray'; // Визначення кольору для кожної зірки
+    stars.push(
+      <span key={i} style={{ color: color }}>
+        ★
+      </span>
+    );
+  }
+  return <div>{stars}</div>;
+};
 
 const Rewievs = () => {
   const [reviews, setReviews] = useState([]);
@@ -9,14 +33,22 @@ const Rewievs = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const reviewsResponse = await fetch('https://6632bb43f7d50bbd9b473f15.mockapi.io/advert');
+        const reviewsResponse = await fetch(
+          'https://6632bb43f7d50bbd9b473f15.mockapi.io/advert'
+        );
         const reviewsData = await reviewsResponse.json();
 
-        const avatarsResponse = await fetch('https://randomuser.me/api/?results=4');
+        const avatarsResponse = await fetch(
+          'https://randomuser.me/api/?results=4'
+        );
         const avatarsData = await avatarsResponse.json();
 
-        const allReviews = reviewsData.flatMap(rv => rv.reviews || []);
-        const shuffledReviews = allReviews.sort(() => 0.5 - Math.random()).slice(0, 4);
+        const allReviews = reviewsData.flatMap(rv =>
+          (rv.reviews || []).map(review => ({ ...review, gallery: rv.gallery }))
+        );
+        const shuffledReviews = allReviews
+          .sort(() => 0.5 - Math.random())
+          .slice(0, 4);
         setReviews(shuffledReviews);
 
         const avatars = avatarsData.results.map(user => user.picture.large);
@@ -32,123 +64,124 @@ const Rewievs = () => {
   return (
     <div className={css.wrapper}>
       <div>
-        <h2 className={css.title}>Reviews</h2>
+        <p>NOMAD RV Raitng </p>
+        <TotalRating reviews={reviews} />
       </div>
-      {reviews.length > 0 ? (
+      {reviews.length > 0 &&
+        avatars.length > 0 &&
         reviews.map((review, index) => (
-          <div className={css.reviewCard} key={index}>
-            <div className={css.avatarBlok}>
-              <img src={avatars[index]} alt={`${review.reviewer_name}'s avatar`} className={css.avatar} />
-
-              <p className={css.reviewerName}>{review.reviewer_name}</p>
+          <div className={css.card} key={index}>
+            <div className={css.avatarBlock}>
+              <img
+                src={avatars[index]}
+                alt={`${review.reviewer_name}'s avatar`}
+                className={css.avatar}
+              />
+              <div>
+                <p className={css.name}>{review.reviewer_name}</p>
+                <RatingStars count={5} value={review.reviewer_rating} />
               </div>
-
-
-
-            <div className={css.reviewerInfo}>
-            <p className={css.comment}>{review.comment}</p>
-            <p> camper rating: { review.reviewer_rating}</p>
-                <Rating
-                  count={5}
-                  value={review.reviewer_rating}
-                  size={24}
-                  activeColor="#ffd700"
-                  edit={false}
+            </div>
+            <div className={css.commentBlock}>
+              {review.gallery && review.gallery.length > 0 && (
+                <img
+                  className={css.camperPhoto}
+                  src={review.gallery[0]}
+                  alt="Camper photo"
                 />
-              </div>
+              )}
+              <p className={css.comment}>{review.comment}</p>
+            </div>
           </div>
-        ))
-      ) : (
-        <p className={css.noReviews}>No reviews available</p>
-      )}
+        ))}
     </div>
   );
 };
 
 export default Rewievs;
 
-
-
-
-
 // import React, { useEffect, useState } from 'react';
-// import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
-// import 'react-circular-progressbar/dist/styles.css';
+// import ReactStars from 'react-rating-stars-component';
 // import css from './Rewievs.module.css';
+// import TotalRating from '../totalRating/TotalRating'; // Виправлений шлях імпорту
+// import Logo from 'components/logo/Logo';
 
 // const Rewievs = () => {
 //   const [reviews, setReviews] = useState([]);
 //   const [avatars, setAvatars] = useState([]);
 
 //   useEffect(() => {
-//     // Fetch data from the advert API
-//     fetch('https://6632bb43f7d50bbd9b473f15.mockapi.io/advert')
-//       .then(response => response.json())
-//       .then(data => {
-//         // Assuming data is an array of RVs
-//         const allReviews = data.flatMap(rv => rv.reviews || []);
-//         if (allReviews.length > 0) {
-//           // Get 4 random reviews
-//           const shuffled = allReviews.sort(() => 0.5 - Math.random());
-//           const selected = shuffled.slice(0, 4);
-//           setReviews(selected);
-//         }
-//       })
-//       .catch(error => console.error('Error fetching data:', error));
+//     const fetchData = async () => {
+//       try {
+//         const reviewsResponse = await fetch(
+//           'https://6632bb43f7d50bbd9b473f15.mockapi.io/advert'
+//         );
+//         const reviewsData = await reviewsResponse.json();
 
-//     // Fetch avatars from Random User Generator API
-//     fetch('https://randomuser.me/api/?results=4')
-//       .then(response => response.json())
-//       .then(data => {
-//         const avatars = data.results.map(user => user.picture.large);
+//         const avatarsResponse = await fetch(
+//           'https://randomuser.me/api/?results=4'
+//         );
+//         const avatarsData = await avatarsResponse.json();
+
+//         const allReviews = reviewsData.flatMap(rv =>
+//           (rv.reviews || []).map(review => ({ ...review, gallery: rv.gallery }))
+//         );
+//         const shuffledReviews = allReviews
+//           .sort(() => 0.5 - Math.random())
+//           .slice(0, 4);
+//         setReviews(shuffledReviews);
+
+//         const avatars = avatarsData.results.map(user => user.picture.large);
 //         setAvatars(avatars);
-//       })
-//       .catch(error => console.error('Error fetching avatars:', error));
-//   }, []);
+//       } catch (error) {
+//         console.error('Error fetching data:', error);
+//       }
+//     };
 
-//   const getColor = (rating) => {
-//     if (rating <= 1) return 'red';
-//     if (rating <= 2) return 'orange';
-//     if (rating <= 3) return 'yellow';
-//     if (rating <= 4) return 'lightgreen';
-//     return 'green';
-//   };
+//     fetchData();
+//   }, []);
 
 //   return (
 //     <div className={css.wrapper}>
 //       <div>
-//         <h2 className={css.title}>Reviews</h2>
+//         <p>NOMAD RV Raitng </p>
+//         <TotalRating reviews={reviews} />
 //       </div>
-//       {reviews.length > 0 ? (
+
+//       {reviews.length > 0 &&
+//         avatars.length > 0 &&
 //         reviews.map((review, index) => (
-//           <div className={css.reviewCard} key={index}>
-//             <div className={css.avatarBlok}>
-//             <img src={avatars[index]} alt={`${review.reviewer_name}'s avatar`} className={css.avatar} />
-//             <div className={css.reviewerInfo}>
-//             <p className={css.reviewerName}>{review.reviewer_name}</p>
-//             <div className={css.reviewerRating}>
-//               <CircularProgressbar
-//                 className={css.progressbar}
-//                 value={review.reviewer_rating}
-//                 maxValue={5}
-//                 minValue={0}
-//                 text={`${review.reviewer_rating}`}
-//                 styles={buildStyles({
-//                   pathColor: getColor(review.reviewer_rating),
-//                   textColor: '#000',
-//                   trailColor: '#d6d6d6',
-//                   backgroundColor: '#f8f8f8',
-//                 })}
+//           <div className={css.card} key={index}>
+//             <div className={css.avatarBlock}>
+//               <img
+//                 src={avatars[index]}
+//                 alt={`${review.reviewer_name}'s avatar`}
+//                 className={css.avatar}
 //               />
+//               <div>
+//                 <p className={css.name}>{review.reviewer_name}</p>
+//                 <ReactStars
+//                   count={5}
+//                   value={review.reviewer_rating}
+//                   size={20}
+//                   edit={false}
+//                   isHalf={true}
+//                   activeColor="#ffd700"
+//                 />
+//               </div>
 //             </div>
+//             <div className={css.commentBlock}>
+//               {review.gallery && review.gallery.length > 0 && (
+//                 <img
+//                   className={css.camperPhoto}
+//                   src={review.gallery[0]}
+//                   alt="Camper photo"
+//                 />
+//               )}
+//               <p className={css.comment}>{review.comment}</p>
 //             </div>
-//             </div>
-//             <p className={css.comment}>{review.comment}</p>
 //           </div>
-//         ))
-//       ) : (
-//         <p className={css.noReviews}>No reviews available</p>
-//       )}
+//         ))}
 //     </div>
 //   );
 // };

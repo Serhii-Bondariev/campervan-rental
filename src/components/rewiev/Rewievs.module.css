@@ -1,13 +1,14 @@
-/* Rewievs.module.css */
 .wrapper {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.reviewCard {
+.card {
+  display: flex;
+  flex-direction: column;
   width: 95%;
-  padding: 12px;
+  padding: 2px;
   background: rgba(255, 255, 255, 0.38);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
@@ -17,111 +18,41 @@
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.29);
   margin-bottom: 22px;
-  /* display: flex;
-  border-radius: 8px;
-  padding: 12px;
-  margin-bottom: 28px;
-  width: 95%;
-  text-align: center;
-  background-color: #f9f9f9;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
 }
 
-.avatarBlok {
+.avatarBlock {
   display: flex;
-  flex-direction: column;
+  gap: 12px;
   align-items: center;
+  margin-bottom: 18px;
 }
 
 .avatar {
-  height: 150px;
-  border-radius: 4px;
-  margin-bottom: 16px;
+  width: 60px;
+  border-radius: 8px;
+  margin-right: 12px;
 }
 
-.reviewerName {
+.name {
+  font-size: 18px;
   font-weight: bold;
-  font-size: 1.2em;
-  margin: 8px 0;
 }
 
-.reviewerInfo {
+.commentBlock {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 6px;
-  gap: 14px;
+  gap: 12px;
+  margin-bottom: 12px;
 }
 
-.starRatingContainer {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 8px;
-}
-
-.ratingText {
-  font-size: 1.2em;
-  color: #555;
+.camperPhoto {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 12px;
 }
 
 .comment {
-  font-size: 0.9em;
-  color: #555;
-  margin-top: 12px;
+  color: #4e4a67;
+  line-height: 1.5em;
 }
-
-.noReviews {
-  font-size: 1.2em;
-  color: #888;
-}
-
-/* Custom style for star rating */
-.starRating {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-
-
-
-
-
-
-
-/*
-/* .wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 100%;
-  padding: 12px;
-}
-
-.reviewCard {
-  width: 95%;
-  padding: 12px;
-  background: rgba(255, 255, 255, 0.38);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  border-radius: 12px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  border: 1px solid rgba(255, 255, 255, 0.29);
-  margin-bottom: 22px;
-}
-
-.reviewerName {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 18px;
-  height: 40px;
-  font-weight: bold;
-  margin-bottom: 10px;
-  border-bottom: 1px solid #2b2727;
-  padding: 8px;
-} */
