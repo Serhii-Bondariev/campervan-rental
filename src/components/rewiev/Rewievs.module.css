@@ -2,13 +2,14 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  gap: 42px;
 }
 
 .card {
   display: flex;
   flex-direction: column;
   width: 95%;
-  padding: 2px;
+  padding: 12px 0px 8px 0px;
   background: rgba(255, 255, 255, 0.38);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
@@ -21,6 +22,7 @@
 }
 
 .avatarBlock {
+  padding: 0 12px;
   display: flex;
   gap: 12px;
   align-items: center;
@@ -31,6 +33,7 @@
   width: 60px;
   border-radius: 8px;
   margin-right: 12px;
+  box-shadow: 0 4px 13px rgba(0, 0, 0, 0.4);
 }
 
 .name {
@@ -48,11 +51,13 @@
 .camperPhoto {
   width: 100%;
   height: auto;
-  border-radius: 8px;
+  /* border-radius: 8px; */
   margin-bottom: 12px;
 }
 
 .comment {
+  padding: 0 12px;
+  font-size: 16px;
   color: #4e4a67;
   line-height: 1.5em;
 }

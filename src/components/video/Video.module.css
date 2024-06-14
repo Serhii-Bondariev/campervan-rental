@@ -40,10 +40,10 @@
 .description {
   display: flex;
   flex-direction: column;
-  background-color: rgb(188, 214, 241);
+  background: rgba(255, 255, 255, 0.38);
   border-radius: 0 0 18px 18px;
   text-align: left;
-  padding: 16px;
+  padding: 0px 12px 14px;
   margin: 0 0 22px 0;
   box-shadow: 0 0 10px 0 rgba(72, 47, 30, 0.7);
 }
@@ -57,7 +57,7 @@
 .description h2 {
   display: flex;
   justify-content: center;
-  margin: 0 0 16px 0;
+  margin: 20px 0 16px 0;
   font-size: 28px;
   font-weight: 600;
 }

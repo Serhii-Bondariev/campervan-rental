@@ -63,10 +63,6 @@ const Rewievs = () => {
 
   return (
     <div className={css.wrapper}>
-      <div>
-        <p>NOMAD RV Raitng </p>
-        <TotalRating reviews={reviews} />
-      </div>
       {reviews.length > 0 &&
         avatars.length > 0 &&
         reviews.map((review, index) => (
@@ -94,6 +90,10 @@ const Rewievs = () => {
             </div>
           </div>
         ))}
+      <div>
+        <p>NOMAD RV Raitng </p>
+        <TotalRating reviews={reviews} />{' '}
+      </div>
     </div>
   );
 };

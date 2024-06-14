@@ -22,9 +22,9 @@ const Home = ({ campers }) => {
         <Video />
       </div>
       {/* <BookButton /> */}
-      <div>
+      {/* <div>
         <BookingForm campers={campers} />
-      </div>
+      </div> */}
       <div>
         <RandomCampers campers={campers} />
       </div>

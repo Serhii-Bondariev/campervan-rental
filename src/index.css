@@ -3,23 +3,22 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  /* -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; */
-  /* background-image: repeating-linear-gradient(
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: repeating-linear-gradient(
     145deg,
     #1b6803 0,
     #b6ef6c 25%,
     #93a20a 50%,
     #096fcf 75%,
     #4db2ed 100%
-  ); */
+  );
   height: 100%;
   /* background-image: url('../src/components/images/bgrd/cool-background-red.png'); */
   /* background-size: cover;
   background-position: center;
   background-repeat: no-repeat; */
 }
-
 
 *::after,
 *::before {
