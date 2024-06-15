@@ -1,0 +1,107 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px;
+}
+
+.title {
+  text-align: center;
+  font-family: 'Fira Sans', sans-serif;
+  margin: 20px 0 20px 0;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: -1px 3px 3px rgba(65, 134, 183, 0.5);
+}
+
+.camperTitle {
+  font-family: 'Fira Sans', sans-serif;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 80%; /* Adjust this value as needed */
+  font-size: 24px;
+  font-weight: 600;
+  text-shadow: 1px 1px 1px #f1f3aa;
+}
+
+.camperList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 42px;
+}
+
+.camperCard {
+  /* width: 95%;
+  margin: auto; */
+
+  padding: 12px 0px 8px 0px;
+  border-radius: 10px;
+  /* border: 1px solid rgba(255, 255, 255, 0.29); */
+  background: rgba(255, 255, 255, 0.38);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  /* backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px); */
+}
+
+.horizontalScroll {
+  display: flex;
+  overflow-x: auto;
+}
+
+.camperInfo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 12px 0 12px 0;
+  padding: 0 12px;
+}
+
+.removeButton {
+  background-color: brown;
+  /* margin-top: 12px; */
+  width: 20%;
+  text-align: center;
+  border-radius: 8px;
+  border: none;
+  color: white;
+  padding: 4px;
+  &:hover {
+    background-color: rgb(187, 0, 0);
+    cursor: pointer;
+  }
+}
+
+.camperFooter {
+  padding: 12px 8px 2px 8px;
+}
+
+/* .camperDetails {
+  padding: 0 12px;
+} */
+
+.camperText {
+  margin-bottom: 12px;
+}
+
+.price {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  color: rgb(255, 0, 0);
+}
+
+.location {
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.rating {
+  font-weight: bold;
+}
+
+.camperText {
+  font-size: 18px;
+  font-weight: 200;
+  text-shadow: -1px 3px 3px rgba(65, 67, 3, 0.2);
+}

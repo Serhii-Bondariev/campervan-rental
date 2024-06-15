@@ -7,6 +7,7 @@ import css from './CampersList.module.css';
 import Modal from '../modals/modal/Modal';
 import BookingForm from 'components/booking/BookingForm';
 import Loader from 'components/loader/Loader';
+import BookButton from 'components/buttons/BookButton/BookButton';
 
 const CampersList = () => {
   const [campers, setCampers] = useState([]);
@@ -104,14 +105,28 @@ const CampersList = () => {
               </div>
               <div className={css.camperFooter}>
                 <div className={css.camperDetails}>
-                  <p className={css.cardPrice}>Price: ${camper.price}</p>
-                  <p className={css.cardLocation}>
-                    Location: {camper.location}
+                  <p className={css.camperText}>
+                    Price: <span className={css.price}>$ {camper.price}</span>
                   </p>
-                  <p className={css.cardRating}>Rating: {camper.rating}</p>
-                  <p>details airConditioner: {camper.details.airConditioner}</p>
+                  <p className={css.camperText}>
+                    Rating: <span className={css.rating}>{camper.rating}</span>
+                  </p>
+                  <p className={css.camperText}>
+                    Location:{' '}
+                    <span className={css.location}>{camper.location}</span>
+                  </p>
+                </div>
+                <div>
+                  <BookButton
+                    variant="contained"
+                    className={css.camperBtn}
+                    onClick={() => openModal(camper)}
+                  >
+                    Book Now!
+                  </BookButton>
                 </div>
               </div>
+
               <div></div>
             </li>
           ))
