@@ -4,7 +4,7 @@ import { MdBookmarkAdd } from 'react-icons/md';
 import { useDispatch } from 'react-redux';
 import { addFavorite, deleteFavorite } from '../../redux/campers/slice';
 import css from './RandomCampers.module.css';
-import { Button } from '@mui/material';
+// import { Button } from '@mui/material';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import BookButton from 'components/buttons/BookButton/BookButton';

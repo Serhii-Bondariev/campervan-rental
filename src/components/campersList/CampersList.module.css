@@ -1,4 +1,98 @@
-.campers-card {
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: row;
+  padding: 12px;
+  margin-bottom: 42px;
+}
+
+.camperCard {
+  /* width: 95%;
+  margin: auto; */
+
+  padding: 12px 0px 8px 0px;
+  border-radius: 10px;
+  /* border: 1px solid rgba(255, 255, 255, 0.29); */
+  background: rgba(255, 255, 255, 0.38);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  /* backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px); */
+}
+
+.campersList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 28px;
+}
+
+.title {
+  text-align: center;
+  font-family: 'Fira Sans', sans-serif;
+  margin: 20px 0 20px 0;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.camperInfo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 0 12px 0;
+  padding: 0 12px;
+}
+
+.camperTitle {
+  font-family: 'Fira Sans', sans-serif;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 80%; /* Adjust this value as needed */
+  font-size: 24px;
+  font-weight: 600;
+  text-shadow: 1px 1px 1px #f1f3aa;
+}
+
+.horizontalScroll {
+  display: flex;
+  overflow-x: auto;
+}
+
+.camperItem {
+  margin-bottom: 12px;
+  /* border-radius: 6px; */
+  /* margin: 12px 12px 18px 0px; */
+  flex-shrink: 0;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.camperItem img {
+  max-width: 100%;
+  height: auto;
+}
+
+.bookmark {
+  width: 32px;
+  height: 32px;
+  top: 10px;
+  right: 10px;
+  fill: rgb(252, 239, 0);
+  cursor: pointer;
+}
+
+.bookmark:hover {
+  fill: rgb(165, 87, 39);
+}
+.favorite {
+  fill: rgb(255, 0, 0);
+}
+
+.camperFooter {
+  padding: 12px 8px 2px 8px;
+}
+
+/* .camperCard {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -7,13 +101,7 @@
   border: 1ps solid #2b2727;
 }
 
-.title {
-  text-align: center;
-  font-family: 'Lexend Mega', sans-serif;
-  margin: 20px 0;
-  font-size: 24px;
-  font-weight: bold;
-}
+
 
 .campersList {
   display: flex;
@@ -123,4 +211,4 @@
   height: 24px;
   top: 10px;
   right: 10px;
-}
+} */

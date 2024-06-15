@@ -35,7 +35,7 @@ const BookingForm = ({ onClose }) => {
   };
 
   return (
-    <div className=" mx-30 p-6 rounded-lg border-solid border-2 border-blue-600 bg-blue-50 shadow-lg shadow-blue-500/50: ">
+    <div className=" mx-4 p-6 rounded-lg border-solid border-2 border-blue-600 bg-blue-50 shadow-lg shadow-blue-500/50: ">
       <div className="wrapper mb-4 text-center animate-pulse  text-blue-800">
         <h3 className="text-xl font-bold text-shadow-lime-500">Booking Form</h3>
       </div>

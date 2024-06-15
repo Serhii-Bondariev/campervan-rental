@@ -67,7 +67,7 @@ const CampersList = () => {
   };
 
   return (
-    <div className={css.campersCard}>
+    <div className={css.content}>
       <h2 className={css.title}>Our RV`s</h2>
 
       <ul className={css.campersList}>
@@ -77,18 +77,9 @@ const CampersList = () => {
           </div>
         ) : (
           campers.map((camper, index) => (
-            <li className={css.card} key={index}>
-              <div className={css.cardHeader}>
-                <h3 className={css.cardTitle}>{camper.name}</h3>
-                {/* <MdBookmarkAdd
-                  className={`${css.bookmark} ${
-                    camper.isFavorite ? css.favorite : ''
-                  }`}
-                  onClick={() => toggleFavorite(camper)}
-                  style={{
-                    fill: camper.isFavorite ? 'red' : 'rgb(247, 180, 80)',
-                  }}
-                /> */}
+            <li className={css.camperCard} key={index}>
+              <div className={css.camperInfo}>
+                <h3 className={css.camperTitle}>{camper.name}</h3>
                 <MdBookmarkAdd
                   className={`${css.bookmark} ${
                     camper.isFavorite ? css.favorite : ''
@@ -111,11 +102,15 @@ const CampersList = () => {
                   />
                 ))}
               </div>
-              <div>
-                <p className={css.cardPrice}>Price: ${camper.price}</p>
-                <p className={css.cardLocation}>Location: {camper.location}</p>
-                <p className={css.cardRating}>Rating: {camper.rating}</p>
-                <p>details airConditioner: {camper.details.airConditioner}</p>
+              <div className={css.camperFooter}>
+                <div className={css.camperDetails}>
+                  <p className={css.cardPrice}>Price: ${camper.price}</p>
+                  <p className={css.cardLocation}>
+                    Location: {camper.location}
+                  </p>
+                  <p className={css.cardRating}>Rating: {camper.rating}</p>
+                  <p>details airConditioner: {camper.details.airConditioner}</p>
+                </div>
               </div>
               <div></div>
             </li>
