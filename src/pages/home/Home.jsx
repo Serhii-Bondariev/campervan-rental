@@ -28,7 +28,7 @@ const Home = ({ campers }) => {
       <div>
         <RandomCampers campers={campers} />
       </div>
-      <Gallery campers={campers} />
+
       {/* <CardAnimation /> */}
       <Rewievs />
     </div>

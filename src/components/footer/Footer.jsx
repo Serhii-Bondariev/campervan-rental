@@ -4,7 +4,6 @@ import { NavLink } from 'react-router-dom';
 import css from './Footer.module.css';
 import Division from 'components/division/Division';
 import LogoImg from 'components/logoImg/LogoImg';
-import TotalRating from 'components/totalRating/TotalRating';
 
 const Footer = ({ props, reviews }) => {
   return (
@@ -18,10 +17,6 @@ const Footer = ({ props, reviews }) => {
           </div>
           <div className={css.footerDivision}>
             <Division />
-          </div>
-          <div>
-            <p>Average rating: </p>
-            <TotalRating reviews={reviews} />
           </div>
         </div>
         <div className={css.info}>

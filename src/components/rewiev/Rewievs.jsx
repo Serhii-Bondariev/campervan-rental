@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import css from './Rewievs.module.css';
 import TotalRating from '../totalRating/TotalRating'; // Виправлений шлях імпорту
 import Logo from 'components/logo/Logo';
+import ReviewHeder from 'components/reviewHeder/ReviewHeder';
 
 // Функція для визначення кольорів рейтингу
 const getColor = rating => {
@@ -63,6 +64,7 @@ const Rewievs = () => {
 
   return (
     <div className={css.wrapper}>
+      <ReviewHeder className={css.rating} reviews={reviews} />
       {reviews.length > 0 &&
         avatars.length > 0 &&
         reviews.map((review, index) => (
@@ -90,10 +92,6 @@ const Rewievs = () => {
             </div>
           </div>
         ))}
-      <div>
-        <p>NOMAD RV Raitng </p>
-        <TotalRating reviews={reviews} />{' '}
-      </div>
     </div>
   );
 };

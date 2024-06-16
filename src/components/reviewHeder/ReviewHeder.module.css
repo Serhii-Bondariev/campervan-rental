@@ -1,0 +1,91 @@
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 42px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  padding: 12px 6px 8px 6px;
+  background: rgba(255, 255, 255, 0.38);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: 12px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.29);
+  margin-bottom: 22px;
+}
+
+.title {
+  text-align: center;
+  font-family: 'Fira Sans', sans-serif;
+  margin: 20px 0 20px 0;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: -1px 3px 3px rgba(65, 134, 183, 0.5);
+}
+
+.rating {
+  width: 100%;
+  padding: 12px 6px 8px 6px;
+  background: rgba(255, 255, 255, 0.38);
+  border-radius: 12px;
+  box-shadow: 0 8px 4px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.29);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* padding: 12px; */
+}
+
+.ratingTitle {
+  font-family: 'Lexend Mega', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 300;
+  line-height: 1.2;
+  text-align: center;
+  text-shadow: -1px 3px 3px rgba(65, 134, 183, 0.5);
+}
+
+.totalRating {
+  margin-bottom: 0px;
+}
+
+.ratingBlock {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* .descriptionBlock {
+} */
+
+.description {
+  margin-top: 20px;
+  color: #4e4a67;
+  margin-bottom: 30px;
+  line-height: 1.5em;
+}
+
+.buttons {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-around;
+  gap: 12px;
+}
+
+.button {
+  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  &:hover {
+    cursor: pointer;
+    background-color: blue;
+  }
+}
