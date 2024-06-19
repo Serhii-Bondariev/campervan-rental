@@ -34,13 +34,9 @@
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: yellow;
-  font-weight: 700;
-  font-size: 8px;
-  line-height: 12px;
-  height: 44px;
-  width: 100%;
-  text-align: center;
-  margin: 0;
+  font-weight: 600;
+  font-size: 9px;
+  line-height: 1.23;
 }
 
 .navigationLink svg {

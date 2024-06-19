@@ -26,8 +26,10 @@ const FavoriteCampers = campers => {
           <div className={css.gallery}>
             <Gallery campers={campers} />
           </div>
-          <Link to="/catalog" className={css.noFavorites}>
-            Or choose one from catalog!
+          <Link to="/catalog">
+            <button type="button" className={css.button}>
+              Or choose one from catalog!
+            </button>
           </Link>{' '}
         </div>
       ) : (

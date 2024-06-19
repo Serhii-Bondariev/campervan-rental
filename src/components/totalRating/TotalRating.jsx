@@ -6,11 +6,11 @@ const getColor = rating => {
   if (rating <= 1) return '#FF0000';
   if (rating <= 2) return '#FFA500';
   if (rating <= 3) return '#FFFF00';
-  if (rating <= 4) return '#90EE90';
+  if (rating <= 4) return '#41ea6b';
   return '#008000';
 };
 
-const RatingStars = ({ count, value }) => {
+const RatingStars = ({ count, value, reviews }) => {
   const stars = [];
   for (let i = 1; i <= count; i++) {
     const color = i <= value ? getColor(value) : 'gray';

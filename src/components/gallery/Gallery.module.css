@@ -13,7 +13,6 @@
 
 .mySwiper {
   width: 100%;
-  height: 100%;
 }
 
 .swiper-slide {
@@ -34,7 +33,6 @@
   object-fit: cover;
   object-position: 0 70%;
   border-radius: 16px;
-
 }
 
 .legend {

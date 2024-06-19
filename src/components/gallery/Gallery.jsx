@@ -45,6 +45,7 @@ const Gallery = () => {
       <Swiper
         spaceBetween={30}
         effect={'fade'}
+        centeredSlides={true}
         navigation={true}
         pagination={{ clickable: true }}
         modules={[EffectFade, Navigation, Pagination]}
@@ -53,7 +54,12 @@ const Gallery = () => {
       >
         {campers.map((camper, index) => (
           <SwiperSlide key={index} onClick={() => openModal(camper)}>
-            <img className={css.img} src={camper.gallery[0]} alt={`Camper ${index}`} />
+            <img
+              className={css.img}
+              loading="lazy"
+              src={camper.gallery[0]}
+              alt={`Camper ${index}`}
+            />
             <p className={css.legend}>{camper.name}</p>
           </SwiperSlide>
         ))}
