@@ -42,29 +42,32 @@ const Navigation = () => {
           </NavLink>
         </div>
         <Division />
-        {windowWidth >= 768 ? (
+        {windowWidth >= 769 ? (
           <div className={css.navbarLinksDesktop}>
             <NavLink
-              className={css.LinksDesktop}
+              className={({ isActive }) =>
+                isActive ? css.active : css.linksDesktop
+              }
               to="/"
               onClick={closeMobileMenu}
-              activeClassName={css.active}
             >
               Home
             </NavLink>
             <NavLink
-              className={css.LinksDesktop}
+              className={({ isActive }) =>
+                isActive ? css.active : css.linksDesktop
+              }
               to="/catalog"
               onClick={closeMobileMenu}
-              activeClassName={css.active}
             >
               Catalog
             </NavLink>
             <NavLink
-              className={css.LinksDesktop}
+              className={({ isActive }) =>
+                isActive ? css.active : css.linksDesktop
+              }
               to="/favorites"
               onClick={closeMobileMenu}
-              activeClassName={css.active}
             >
               Favorites
             </NavLink>

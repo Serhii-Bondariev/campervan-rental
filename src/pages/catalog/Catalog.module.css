@@ -3,6 +3,6 @@
   flex-wrap: wrap;
   justify-content: center;
   flex-direction: row;
-  padding: 12px;
+  gap: 24px;
   margin-bottom: 42px;
 }

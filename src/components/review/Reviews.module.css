@@ -1,8 +1,12 @@
+/* * {
+  outline: 1px solid red;
+} */
+
 .wrapper {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 42px;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
 }
 
 .card {

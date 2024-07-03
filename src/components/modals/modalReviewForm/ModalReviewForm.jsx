@@ -6,7 +6,7 @@ const getColor = rating => {
   if (rating <= 2) return '#FFA500'; // помаранчевий
   if (rating <= 3) return '#FFFF00'; // жовтий
   if (rating <= 4) return '#90EE90'; // світло-зелений
-  return '#008000'; // зелений
+  return '#079f07'; // зелений
 };
 
 const RatingStars = ({ count, value, onRatingChange }) => {
@@ -91,6 +91,7 @@ const ModalReviewForm = ({ isOpen, onClose, onSubmit }) => {
 
         <form onSubmit={handleSubmit}>
           <div>
+            <h3 className={css.title}>leave your review</h3>
             <div className={css.avatarBlock}>
               {avatars.length > 0 && (
                 <select
@@ -99,11 +100,11 @@ const ModalReviewForm = ({ isOpen, onClose, onSubmit }) => {
                   className={css.avatarSelect}
                 >
                   <option value="" disabled>
-                    Виберіть аватар
+                    Choose your avatar
                   </option>
                   {avatars.map((avatar, index) => (
                     <option key={index} value={avatar}>
-                      Аватар {index + 1}
+                      Avatar {index + 1}
                     </option>
                   ))}
                 </select>
@@ -122,20 +123,25 @@ const ModalReviewForm = ({ isOpen, onClose, onSubmit }) => {
                 name="name"
                 value={name}
                 onChange={e => setName(e.target.value)}
-                placeholder="Введіть своє ім'я"
+                placeholder="Enter your name"
                 className={css.nameInput}
               />
-              <RatingStars
-                count={5}
-                value={rating}
-                onRatingChange={setRating}
-              />
+              <div className={css.ratingBlock}>
+                <p>Rate us!</p>
+                <RatingStars
+                  count={5}
+                  value={rating}
+                  onRatingChange={setRating}
+                  className={css.rating}
+                />
+              </div>
             </div>
           </div>
-          <textarea name="review-text" placeholder="Напишіть свій відгук..." />
+          <textarea name="review-text" placeholder="Write your review" />
           <div>
             <input
               type="file"
+              name="review-photos"
               multiple
               onChange={handlePhotoUpload}
               className={css.fileInput}
@@ -151,7 +157,9 @@ const ModalReviewForm = ({ isOpen, onClose, onSubmit }) => {
               ))}
             </div>
           </div>
-          <button type="submit">Подати відгук</button>
+          <div className={css.buttonBlock}>
+            <button type="submit">SUBMIT REVIEW</button>
+          </div>
         </form>
       </div>
     </div>

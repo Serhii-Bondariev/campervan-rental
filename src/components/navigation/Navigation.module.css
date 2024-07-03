@@ -2,8 +2,6 @@
 .navigation {
   background: rgba(255, 255, 255, 0.53);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-
-  -webkit-backdrop-filter: blur(7.4px);
   border: 1px solid rgba(255, 255, 255, 0.22);
   padding: 10px 20px;
 }
@@ -29,22 +27,7 @@
   text-align: center;
 }
 
-/* .logoTitle {
-  font-family: 'Lexend Mega', sans-serif;
-  font-size: 26px;
-  font-weight: 300;
-  line-height: 1.2;
-  text-align: center;
-  text-shadow: -1px 3px 3px rgba(65, 134, 183, 0.5);
-}
-
-.logoText {
-  font-family: 'Lexend Mega', sans-serif;
-  font-size: 10px;
-  font-weight: 300;
-  text-shadow: -1px 3px 3px rgba(65, 67, 3, 0.5);
-} */
-.LinksDesktop {
+/* .linksDesktop {
   font-family: 'Lexend Mega', sans-serif;
   text-decoration: none;
   color: #333;
@@ -52,7 +35,7 @@
   padding: 10px;
 
   transition: background-color 0.3s, color 0.3s;
-}
+} */
 
 .navbarLinksDesktop {
   display: flex;
@@ -66,13 +49,46 @@
 }
 
 .navbarLinksDesktop a {
-  text-decoration: none;
-  text-shadow: -1px 3px 3px rgba(65, 134, 183, 0.5);
-  color: #333;
-  font-size: 12px;
+  cursor: pointer;
+  /* color: white; */
+  position: relative;
   padding: 5px 10px;
+  font-size: 16px;
+  /* border-top-right-radius: 12px;
+  border-bottom-left-radius: 12px; */
+  transition: all 1s;
+  &::after,
+  &::before {
+    content: ' ';
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    border: 0px solid #fff;
+    transition: all 1s;
+  }
+  &:after {
+    top: 0px;
+    left: 0px;
+    /* border-top: 1px solid rgb(4, 181, 28);
+    border-left: 1px solid rgb(79, 57, 244); */
+  }
+  &:before {
+    /* bottom: -1px;
+    right: -1px; */
+    /* border-bottom: 5px solid rgb(147, 180, 251);
+    border-right: 5px solid rgb(2, 55, 190); */
+  }
+  &:hover {
+    content: ' ';
+    color: #0175e9;
+    transition: all 1s;
 
-  transition: background-color 0.3s, color 0.3s;
+    &:before,
+    &:after {
+      width: 100%;
+      height: 100%;
+    }
+  }
 }
 
 .navbarMobileMenu a {
@@ -80,22 +96,19 @@
   color: #333;
   font-size: 12px;
   padding: 5px 10px;
-  /* border-radius: 4px; */
   transition: background-color 0.3s, color 0.3s;
 }
 
-.navbarLinksDesktop a:hover {
+/* .navbarLinksDesktop a:hover {
   border-bottom: 1px solid rgb(250, 225, 0);
   border-top: 1px solid #0048ff;
   transition: 0.2s ease-in-out;
 }
 .navbarMobileMenu a:hover {
   background-color: rgba(0, 0, 0, 0.1);
-}
+} */
 
 .active {
-  background-color: #1976d2;
-  color: #ffffff;
 }
 
 .error {
@@ -164,54 +177,3 @@ button:hover {
   text-align: center;
   text-shadow: -1px 3px 3px rgba(65, 67, 3, 0.5);
 }
-
-/* .navigation {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-}
-
-.navBlock {
-  padding: 8px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  align-content: center;
-  width: 100%;
-}
-.logoTitle {
-  font-family: 'Lexend Mega', sans-serif;
-  font-size: 26px;
-  font-weight: 300;
-  line-height: 1.2;
-  text-align: center;
-  text-shadow: -1px 3px 3px rgba(65, 134, 183, 0.5);
-}
-
-.logoText {
-  font-family: 'Lexend Mega', sans-serif;
-  font-size: 12px;
-  font-weight: 300;
-  text-shadow: -1px 3px 3px rgba(65, 67, 3, 0.5);
-}
-
-.logoDivision {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.division {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-.navbarMobileMenu {
-  margin-right: 8px;
-}
-/* .iconlogo1 {
-  border: 2px dashed #2a2a2a;
-  border-radius: 8px;
-  fill: #2a2a2a;
-} */
