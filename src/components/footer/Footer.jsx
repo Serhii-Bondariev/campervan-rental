@@ -58,13 +58,13 @@ const Footer = ({ props, reviews }) => {
               />
             </div>
 
-            <div>
+            {/* <div>
               <SocialIcon
                 label="Fiverr"
                 target="_blank"
                 url="https://www.fiverr.com/referral_program"
               />
-            </div>
+            </div> */}
           </div>
           <div className={css.border}></div>
           <p className={css.version}>Version 0.0.8</p>
