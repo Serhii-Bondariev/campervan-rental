@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 import { addFavorite, deleteFavorite } from '../../redux/campers/slice';
 import css from './CampersList.module.css';
 import Modal from '../modals/modal/Modal';
-import BookingForm from 'components/booking/BookingForm';
+import BookingForm from 'components/modals/booking/BookingForm';
 import Loader from 'components/loader/Loader';
 import BookButton from 'components/buttons/BookButton/BookButton';
 

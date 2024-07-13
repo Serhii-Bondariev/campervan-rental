@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import BookingForm from 'components/booking/BookingForm';
+import BookingForm from 'components/modals/booking/BookingForm';
 
 const BookButton = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);

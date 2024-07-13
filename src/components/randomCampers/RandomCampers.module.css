@@ -9,12 +9,6 @@
   margin-bottom: 42px;
 }
 
-/* .camperList {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-} */
-
 .camperCard {
   /* width: 95%;
   margin: auto; */
@@ -99,8 +93,26 @@
   padding: 12px 8px 2px 8px;
 }
 
+.border {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.border::before {
+  content: ' ';
+  width: 100%;
+  height: 2px;
+  /* background-color: rgba(32, 115, 241, 0.5); */
+}
 /* .camperDetails {
   padding: 0 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 } */
 
 .camperText {
@@ -134,6 +146,13 @@
   justify-content: center; */
   /* margin: 12 0 20px 0px; */
   width: 120px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 28px;
 }
 
 .swiper-button-prev,
