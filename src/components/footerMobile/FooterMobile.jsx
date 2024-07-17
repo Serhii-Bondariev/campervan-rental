@@ -3,7 +3,7 @@ import { MdOutlineManageAccounts } from 'react-icons/md';
 import { NavLink } from 'react-router-dom';
 import LogoImg from 'components/logoImg/LogoImg';
 import css from './FooterMobile.module.css';
-import MobileMenuModal from 'components/modals/mobileMenuModal/MobileMenuModal';
+import MobileMenuModal from 'components/mobileMenuModal/MobileMenuModal';
 import { FaBars, FaTimes } from 'react-icons/fa';
 
 const FooterMobile = () => {

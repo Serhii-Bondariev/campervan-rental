@@ -72,12 +72,7 @@
     /* border-top: 1px solid rgb(4, 181, 28);
     border-left: 1px solid rgb(79, 57, 244); */
   }
-  &:before {
-    /* bottom: -1px;
-    right: -1px; */
-    /* border-bottom: 5px solid rgb(147, 180, 251);
-    border-right: 5px solid rgb(2, 55, 190); */
-  }
+
   &:hover {
     content: ' ';
     color: #0175e9;
@@ -108,8 +103,8 @@
   background-color: rgba(0, 0, 0, 0.1);
 } */
 
-.active {
-}
+/* .active {
+} */
 
 .error {
   color: red;

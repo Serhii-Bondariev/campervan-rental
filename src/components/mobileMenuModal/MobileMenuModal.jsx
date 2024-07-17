@@ -11,7 +11,6 @@ const MobileMenuModal = ({ isOpen, onClose }) => {
     } else {
       document.body.classList.remove(css.noScroll);
     }
-
     return () => {
       document.body.classList.remove(css.noScroll);
     };
@@ -22,9 +21,7 @@ const MobileMenuModal = ({ isOpen, onClose }) => {
       {isOpen && (
         <div className={css.overlay} onClick={onClose}>
           <div className={css.modal} onClick={e => e.stopPropagation()}>
-            <button className={css.closeButton} onClick={onClose}>
-              <MdClose />
-            </button>
+            <MdClose onClick={onClose} size={34} className={css.closeIcon} />
             <NavLink
               to="/"
               className={({ isActive }) => (isActive ? css.active : '')}
@@ -45,6 +42,13 @@ const MobileMenuModal = ({ isOpen, onClose }) => {
               onClick={onClose}
             >
               Favorites
+            </NavLink>
+            <NavLink
+              to="/UserProfile"
+              className={({ isActive }) => (isActive ? css.active : '')}
+              onClick={onClose}
+            >
+              Profile
             </NavLink>
           </div>
         </div>

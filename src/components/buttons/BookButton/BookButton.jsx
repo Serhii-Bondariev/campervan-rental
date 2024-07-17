@@ -24,7 +24,7 @@ const BookButton = () => {
 
       {isModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="bg-#757272 p-8 rounded-lg shadow-lg w-full max-w-lg">
+          <div className="bg-#757272 p-8  shadow-lg w-full max-w-lg">
             <button
               className="absolute top-0 right-0 m-4 text-black"
               onClick={closeModal}

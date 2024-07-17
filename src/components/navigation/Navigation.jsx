@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import css from './Navigation.module.css';
 import { FaBars } from 'react-icons/fa';
-import MobileMenuModal from '../modals/mobileMenuModal/MobileMenuModal';
+import MobileMenuModal from '../mobileMenuModal/MobileMenuModal';
 // import Logo from 'components/logo/Logo';
 import LogoImg from 'components/logoImg/LogoImg';
 import Division from 'components/division/Division';
@@ -70,6 +70,15 @@ const Navigation = () => {
               onClick={closeMobileMenu}
             >
               Favorites
+            </NavLink>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? css.active : css.linksDesktop
+              }
+              to="/UserProfile"
+              onClick={closeMobileMenu}
+            >
+              Profile
             </NavLink>
           </div>
         ) : (

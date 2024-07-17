@@ -9,12 +9,22 @@ import Favorites from '../pages/favorites/Favorites.jsx';
 import Navigation from './navigation/Navigation.jsx';
 import Footer from './footer/Footer.jsx';
 import FooterMobile from './footerMobile/FooterMobile.jsx';
+import UserProfile from 'profile/UserProfile.jsx';
 
 // import css from './App.css';
 // import NotFound from "./pages/NotFound";
 
 function App() {
   const isMobile = useMediaQuery({ maxWidth: 768 });
+
+  const user = {
+    name: 'John Doe',
+    age: 30,
+    email: 'john.doe@example.com',
+    address: '123 Main St, Springfield',
+    bio: 'Software developer with a passion for open-source projects and teaching.',
+    profilePicture: 'https://via.placeholder.com/150',
+  };
 
   return (
     <div>
@@ -23,9 +33,11 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/catalog" element={<Catalog />} />
         <Route path="/favorites" element={<Favorites />} />
+        <Route path="/UserProfile" element={<UserProfile user={user} />} />
         {/* <Route path="/404" element={<NotFound />} /> */}
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
+
       {isMobile && <FooterMobile />}
       <Footer />
     </div>
