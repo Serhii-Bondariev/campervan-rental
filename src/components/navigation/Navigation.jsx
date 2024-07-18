@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import css from './Navigation.module.css';
-import { FaBars } from 'react-icons/fa';
+import { FaBars, FaPhoneAlt, FaMailBulk } from 'react-icons/fa';
 import MobileMenuModal from '../mobileMenuModal/MobileMenuModal';
 // import Logo from 'components/logo/Logo';
 import LogoImg from 'components/logoImg/LogoImg';
@@ -42,6 +42,13 @@ const Navigation = () => {
           </NavLink>
         </div>
         <Division />
+        <div className={css.contactInfo}>
+          <FaPhoneAlt className={css.phone} />
+          <FaMailBulk className={css.email} />
+
+          {/* <span className="phone">Phone: +1 (234) 567-8901</span>
+          <span className="email">Email: info@company.com</span> */}
+        </div>
         {windowWidth >= 769 ? (
           <div className={css.navbarLinksDesktop}>
             <NavLink

@@ -20,10 +20,12 @@ function App() {
   const user = {
     name: 'John Doe',
     age: 30,
+    phone: '+1 (234) 567-8901',
     email: 'john.doe@example.com',
     address: '123 Main St, Springfield',
     bio: 'Software developer with a passion for open-source projects and teaching.',
-    profilePicture: 'https://via.placeholder.com/150',
+    profilePicture: 'https://randomuser.me/api/portraits/men/20.jpg',
+    favoriteCamper: 'Road Bear',
   };
 
   return (
