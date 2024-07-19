@@ -70,6 +70,12 @@
   margin: 10px 0 30px 0;
 }
 
+.iconSoc {
+  box-shadow: 0px 4px 4px 0px rgba(130, 127, 130, 1);
+
+  border-radius: 50%;
+}
+
 .SocLinks a {
   margin: 0 10px;
   &:hover {

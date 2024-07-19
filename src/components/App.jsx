@@ -6,7 +6,7 @@ import { useMediaQuery } from 'react-responsive';
 import Home from '../pages/home/Home.jsx';
 import Catalog from '../pages/catalog/Catalog.jsx';
 import Favorites from '../pages/favorites/Favorites.jsx';
-import Navigation from './navigation/Navigation.jsx';
+import Navigation from './header/Header.jsx';
 import Footer from './footer/Footer.jsx';
 import FooterMobile from './footerMobile/FooterMobile.jsx';
 import UserProfile from 'profile/UserProfile.jsx';

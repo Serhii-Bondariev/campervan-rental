@@ -51,7 +51,48 @@
   padding: 0 12px;
 }
 
-.removeButton {
+.removeIcon {
+  width: 2em;
+  height: 2em;
+  cursor: pointer;
+  fill: red;
+  /* fill: rgb(18, 104, 225); */
+  &:hover {
+    fill: red;
+    transition: 0.5s all ease;
+    transform: scale(1.2);
+  }
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 140px;
+  background-color: rgb(142, 88, 88);
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%; /* Position the tooltip above the text */
+  left: 50%;
+  margin-left: -100px;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* .removeButton {
   background-color: brown;
   width: 20%;
   text-align: center;
@@ -63,7 +104,7 @@
     background-color: rgb(187, 0, 0);
     cursor: pointer;
   }
-}
+} */
 
 .camperFooter {
   padding: 12px 8px 2px 8px;

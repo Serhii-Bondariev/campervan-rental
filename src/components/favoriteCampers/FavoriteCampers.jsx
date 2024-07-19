@@ -4,6 +4,7 @@ import css from './FavoriteCampers.module.css';
 import BookButton from 'components/buttons/BookButton/BookButton';
 import { Link } from 'react-router-dom';
 import Gallery from 'components/gallery/Gallery';
+import { CiBookmarkRemove } from 'react-icons/ci';
 
 const FavoriteCampers = campers => {
   const favorites = useSelector(state => state.campers.favorites);
@@ -38,13 +39,13 @@ const FavoriteCampers = campers => {
             <li className={css.camperCard} key={index}>
               <div className={css.camperInfo}>
                 <h3 className={css.camperTitle}>{camper.name}</h3>
-                <button
-                  className={css.removeButton}
-                  onClick={() => removeFromFavorites(camper)}
-                  type="button"
-                >
-                  Remove
-                </button>
+                <div className={css.tooltip}>
+                  <CiBookmarkRemove
+                    className={css.removeIcon}
+                    onClick={() => removeFromFavorites(camper)}
+                  />
+                  <span className={css.tooltiptext}>Delete from favorites</span>
+                </div>
               </div>
               <div className={css.horizontalScroll}>
                 {camper.gallery.map((image, index) => (

@@ -51,7 +51,7 @@ const CardAnimation = () => {
                     type="radio"
                     name="slide"
                     id={`c${index + 1}`}
-                    defaultChecked={index === 0} // Перевірте, чи це перший елемент
+                    defaultChecked={index === 0}
                   />
                   <div className={styles.row}>
                     <div className={styles.icon}>{index + 1}</div>

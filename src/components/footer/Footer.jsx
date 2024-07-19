@@ -24,6 +24,7 @@ const Footer = ({ props, reviews }) => {
           <div className={css.SocLinks}>
             <div>
               <SocialIcon
+                className={css.iconSoc}
                 label="GitHub"
                 target="_blank"
                 url="https://github.com/Serhii-Bondariev"
@@ -31,6 +32,7 @@ const Footer = ({ props, reviews }) => {
             </div>
             <div>
               <SocialIcon
+                className={css.iconSoc}
                 label="LinkedIn"
                 target="_blank"
                 url="https://linkedin.com/in/serhii-bondariev"
@@ -38,6 +40,7 @@ const Footer = ({ props, reviews }) => {
             </div>
             <div>
               <SocialIcon
+                className={css.iconSoc}
                 label="Email"
                 bgColor="#7d0a17c3"
                 url="mailto:xx.code4u@gmail.com"
@@ -45,6 +48,7 @@ const Footer = ({ props, reviews }) => {
             </div>
             <div>
               <SocialIcon
+                className={css.iconSoc}
                 label="Facebook"
                 target="_blank"
                 url="https://www.facebook.com"
@@ -52,6 +56,7 @@ const Footer = ({ props, reviews }) => {
             </div>
             <div>
               <SocialIcon
+                className={css.iconSoc}
                 label="Instagram"
                 target="_blank"
                 url="https://www.instagram.com"
