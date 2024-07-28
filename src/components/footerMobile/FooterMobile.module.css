@@ -4,7 +4,6 @@
   box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.16);
   width: 100%;
   padding: 10px 0 10px 0;
-  /* height: 64px; */
   bottom: 0;
   left: 0;
   z-index: 111;
@@ -47,8 +46,10 @@
 .navigationLink svg {
   max-width: 24px;
   display: block;
+  margin: 0 auto;
+  height: 20px;
+
   margin: 0 0 5px 0;
-  height: 28px;
 }
 
 .navigationLink svg :hover {

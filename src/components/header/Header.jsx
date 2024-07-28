@@ -45,7 +45,8 @@ const Navigation = () => {
       {windowWidth < 768 && (
         <div className={css.contactInfo}>
           <div className={css.phone} onClick={handlePhoneClick}>
-            <FaPhoneAlt className={css.phoneIco} /> +1 (234) 567-8901
+            <FaPhoneAlt className={css.phoneIco} alt="phone" /> +1 (234)
+            567-8901
           </div>
           <div className={css.email} onClick={handleEmailClick}>
             <FaMailBulk className={css.emailIco} /> info@company.com
