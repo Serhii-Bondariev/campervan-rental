@@ -1,15 +1,17 @@
 .moreInfoBtn {
   color: white;
+  background-color: rgb(59 130 246);
   padding: 10px 20px;
   text-align: center;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 0.9em;
+  font-weight: 700;
   cursor: pointer;
   border-radius: 4px;
   transition: background-color 0.3s ease;
 }
 
 .moreInfoBtn:hover {
-  background-color: #e0e0e0;
-  color: black;
+  background-color: rgb(29 78 216);
+  color: w;
 }

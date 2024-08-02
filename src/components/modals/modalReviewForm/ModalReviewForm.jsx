@@ -158,7 +158,7 @@ const ModalReviewForm = ({ isOpen, onClose, onSubmit }) => {
             </div>
           </div>
           <div className={css.buttonBlock}>
-            <button type="submit">SUBMIT REVIEW</button>
+            <button type="submit">Submit review</button>
           </div>
         </form>
       </div>

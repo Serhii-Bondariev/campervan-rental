@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { MdBookmarkAdd } from 'react-icons/md';
+import { GrLocation } from 'react-icons/gr';
 import { useDispatch } from 'react-redux';
 import { addFavorite, deleteFavorite } from '../../redux/campers/slice';
 import css from './RandomCampers.module.css';
@@ -12,6 +13,7 @@ import 'yet-another-react-lightbox/styles.css';
 import MoreInfoBtn from 'components/buttons/moreInfoBtn/MoreInfoBtn';
 import ReviewBtn from 'components/buttons/reviewBtn/ReviewBtn';
 import GalleryBtn from 'components/buttons/galleryBtn/GalleryBtn';
+import Reviews from 'components/review/Reviews';
 
 const RandomCampers = () => {
   const [campers, setCampers] = useState([]);
@@ -175,10 +177,13 @@ const RandomCampers = () => {
                   <p className={css.camperText}>
                     Rating: <span className={css.rating}>{camper.rating}</span>
                   </p>
-                  <p className={css.camperText}>
-                    Location:{' '}
-                    <span className={css.location}>{camper.location}</span>
-                  </p>
+                  <div className={css.locationInfo}>
+                    <GrLocation />
+                    <p>
+                      Locatoin:
+                      <span className={css.location}>{camper.location}</span>
+                    </p>
+                  </div>
                 </div>
 
                 {!camper.showDetails ? (
@@ -186,67 +191,125 @@ const RandomCampers = () => {
                 ) : (
                   <div className={css.fullInfo}>
                     <p>
-                      <strong>Description:</strong> {camper.description}
-                    </p>
-                    <p>
                       <strong>Technical Details:</strong>
                     </p>
-                    <p>Engine: {camper.engine}</p>
-                    <p>Transmission: {camper.transmission}</p>
-                    <p>Form: {camper.form}</p>
-                    <p>Length: {camper.length}</p>
-                    <p>Width: {camper.width}</p>
-                    <p>Height: {camper.height}</p>
-                    <p>Tank Capacity: {camper.tank}</p>
-                    <p>Consumption: {camper.consumption}</p>
-                    <p>Air Conditioner: {camper.details.airConditioner}</p>
-                    <p>Bathroom: {camper.details.bathroom}</p>
-                    <p>Kitchen: {camper.details.kitchen}</p>
-                    <p>Beds: {camper.details.beds}</p>
-                    <p>TV: {camper.details.TV}</p>
-                    <p>CD: {camper.details.CD}</p>
-                    <p>Radio: {camper.details.radio}</p>
-                    <p>Shower: {camper.details.shower}</p>
-                    <p>Toilet: {camper.details.toilet}</p>
-                    <p>Freezer: {camper.details.freezer}</p>
-                    <p>Hob: {camper.details.hob}</p>
-                    <p>Microwave: {camper.details.microwave}</p>
-                    <p>Gas: {camper.details.gas}</p>
-                    <p>Water: {camper.details.water}</p>
-
-                    <button
-                      className={css.closeBtn}
-                      onClick={() => hideDetails(camper._id)}
-                    >
-                      LESS INFO
-                    </button>
-                    {!camper.showReviews ? (
-                      <button onClick={() => showReviews(camper._id)}>
-                        REVIEWS
+                    <p>
+                      <strong>Engine: </strong>
+                      {camper.engine}
+                    </p>
+                    <p>
+                      <strong>Transmission: </strong>
+                      {camper.transmission}
+                    </p>
+                    <p>
+                      <strong>Form: </strong>
+                      {camper.form}
+                    </p>
+                    <p>
+                      <strong>Length: </strong>
+                      {camper.length}
+                    </p>
+                    <p>
+                      <strong>Width: </strong>
+                      {camper.width}
+                    </p>
+                    <p>
+                      <strong>Height: </strong>
+                      {camper.height}
+                    </p>
+                    <p>
+                      <strong>Tank Capacity: </strong>
+                      {camper.tank}
+                    </p>
+                    <p>
+                      <strong>Consumption: </strong>
+                      {camper.consumption}
+                    </p>
+                    <p>
+                      <strong>Air Conditioner: </strong>
+                      {camper.details.airConditioner}
+                    </p>
+                    <p>
+                      <strong>Bathroom: </strong>
+                      {camper.details.bathroom}
+                    </p>
+                    <p>
+                      <strong>Kitchen: </strong>
+                      {camper.details.kitchen}
+                    </p>
+                    <p>
+                      <strong>Beds: </strong>
+                      {camper.details.beds}
+                    </p>
+                    <p>
+                      <strong>TV: </strong>
+                      {camper.details.TV}
+                    </p>
+                    <p>
+                      <strong>CD: </strong>
+                      {camper.details.CD}
+                    </p>
+                    <p>
+                      <strong>Radio: </strong>
+                      {camper.details.radio}
+                    </p>
+                    <p>
+                      <strong>Shower: </strong>
+                      {camper.details.shower}
+                    </p>
+                    <p>
+                      <strong>Toilet: </strong>
+                      {camper.details.toilet}
+                    </p>
+                    <p>
+                      <strong>Freezer: </strong>
+                      {camper.details.freezer}
+                    </p>
+                    <p>
+                      <strong>Hob: </strong>
+                      {camper.details.hob}
+                    </p>
+                    <p>
+                      <strong>Microwave: </strong>
+                      {camper.details.microwave}
+                    </p>
+                    <p>
+                      <strong>Gas: </strong>
+                      {camper.details.gas}
+                    </p>
+                    <p>
+                      <strong>Water: </strong>
+                      {camper.details.water}
+                    </p>
+                    <div>
+                      <button
+                        className={css.closeBtn}
+                        onClick={() => hideDetails(camper._id)}
+                      >
+                        Less Details
                       </button>
-                    ) : (
-                      <div>
-                        <h4>Reviews:</h4>
-                        {camper.reviews.map((review, idx) => (
-                          <div key={idx}>
-                            <p>
-                              <strong>{review.reviewer_name}</strong> -{' '}
-                              {review.reviewer_rating} stars
-                            </p>
-                            <p>{review.comment}</p>
-                          </div>
-                        ))}
-                        <button
-                          className={css.closeBtn}
-                          onClick={() => hideReviews(camper._id)}
-                        >
-                          CLOSE REVIEWS
+
+                      {camper.showReviews ? (
+                        <div>
+                          <h4>Reviews:</h4>
+                          <Reviews reviews={camper.reviews.slice(0, 2)} />
+                          <button
+                            className={css.closeBtn}
+                            onClick={() => hideReviews(camper._id)}
+                          >
+                            Close Reviews
+                          </button>
+                        </div>
+                      ) : (
+                        <button onClick={() => showReviews(camper._id)}>
+                          Rewivs
                         </button>
-                      </div>
-                    )}
-                    <button onClick={() => openLightbox(camper.gallery, 0)}>
-                      PHOTO
-                    </button>
+                      )}
+
+                      <button onClick={() => openLightbox(camper.gallery, 0)}>
+                        Photo
+                      </button>
+                    </div>
                   </div>
                 )}
               </div>

@@ -13,7 +13,7 @@ const MoreInfoBtn = ({ onClick }) => {
 
   return (
     <button className={css.moreInfoBtn} onClick={toggleInfo}>
-      DETAILS
+      Details
     </button>
   );
 };

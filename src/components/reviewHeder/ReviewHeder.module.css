@@ -70,6 +70,7 @@
 }
 
 .buttons {
+  background-attachment: rgb(59 130 246);
   margin-bottom: 10px;
   display: flex;
   justify-content: space-around;
@@ -85,9 +86,10 @@
 .button {
   box-shadow: 0 6px 6px rgba(0, 0, 0, 0.3);
   border-radius: 8px;
+  font-size: 0.9em;
   font-weight: 700;
   &:hover {
     cursor: pointer;
-    background-color: blue;
+    background-color: rgb(29 78 216);
   }
 }
