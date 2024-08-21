@@ -1,5 +1,5 @@
 import React from 'react';
-import CamperVanLogo from '../images/logos/CamperVanLogo.png';
+import CamperVanLogo from '../images/logos/CamperVanLogo.webp';
 import css from './LogoImg.module.css';
 
 const LogoImg = () => {
